@@ -7,9 +7,10 @@ import { Redirect } from "react-router";
 import {
   RegexThis,
   CheckProfile,
-  /*GetJsonArticles,*/
+  IsntEmpty,
+  GetJsonArticles,
   GetArticlesLinks,
-  /*GetFaqQuestions,*/
+  GetFaqQuestions,
 } from "./00-Appendix.jsx";
 import axios from "axios";
 const { Octokit } = require("@octokit/rest");
@@ -39,11 +40,14 @@ export default function App() {
   const [Data3, setData3] = useState({});
   const [Data4, setData4] = useState({});
   const [Data5, setData5] = useState({});
-  const [AllFAQ, setAllFAQ] = useState([]);
+  const [thoseFAQArticle, setthoseFAQArticle] = useState([]);
+  const [FAQ, setFAQ] = useState([]);
+
+  /*const [AllFAQ, setAllFAQ] = useState({});*/
 
   let userName = "gbunimes";
   let repoName = "catnumData";
-  let token = "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";
+  let token = "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";
 
   //Get all categories
   const requestOne = axios.get(
@@ -54,17 +58,9 @@ export default function App() {
       "/master/Catalogue.json",
   );
 
-
-
-
   //Get and store datas before rendering
   useEffect(() => {
-
     async function fetchDatas() {
-
-
-
-  
       //Github data fetch
       const octokit = new Octokit({
         auth: token,
@@ -82,13 +78,9 @@ export default function App() {
           },
         },
       );
+      /*console.log(myFAQdatas.data);*/
 
-    console.log(myFAQdatas.data);
-
-
-
-
-         //Get ARTICLES datas
+      //Get ARTICLES datas
       let myArticlesdatas = await octokit.request(
         "GET /repos/{owner}/{repo}/contents/{path}",
         {
@@ -135,106 +127,57 @@ export default function App() {
         axios.spread((...responses) => {
           const responseOne = responses[0];
           setData1(responseOne.data);
-          /*setData2(myFAQdatas.data);
+          setData2(myFAQdatas.data);
           setData3(myArticlesdatas.data);
           setData4(myImagesDatas.data);
-          setData5(myDocDatas.data);*/
+          setData5(myDocDatas.data);
+
+          //Getting all FAQ links
+
+          {
+            myFAQdatas.data.map((R, i) => getThoseFaqDatas(R, i));
+          }
+          function getThoseFaqDatas(R, i) {
+            thoseFAQArticle.push(
+              "https://raw.githubusercontent.com/" +
+                userName +
+                "/" +
+                repoName +
+                "/main/Faq/" +
+                R.name,
+            );
+          }
+
+          {
+            thoseFAQArticle.map((R, i) => getThoseFaqDatas2(R, i));
+          }
+
+          function getThoseFaqDatas2(R, i) {
+            //console.log(R);
+            const requestFaq = axios.get(R);
+
+            axios.all([requestFaq]).then(
+              axios.spread((...responses) => {
+                const responseFaq = responses[0];
+                FAQ.push(responseFaq.data);
+              }),
+            );
+          }
           setLoading(false);
         }),
       );
     }
-
-
-
-
-
-
-
-
-
-
-/*
-    //Getting all FAQ jsons
-    let thoseFAQArticleNames = [];
-    let AllFAQDatas = [];
-
-    for (let i in Data2) {
-      //console.log(Data2[i].download_url)
-      thoseFAQArticleNames.push(Data2[i].name);
-    }
-    //console.log(thoseFAQArticleNames);
-
-    for (let i in thoseFAQArticleNames) {
-      const requestThis = axios.get(
-        "https://raw.githubusercontent.com/" +
-          userName +
-          "/" +
-          repoName +
-          "/main/Faq/" +
-          thoseFAQArticleNames[i],
-      );
-
-      axios.all([requestThis]).then(
-        axios.spread((...responses) => {
-          const responseOnly = responses[0].data;
-          AllFAQDatas.push(responseOnly);
-        }),
-      );
-    }
-    console.log(AllFAQDatas.length);
-    console.log(AllFAQDatas);
-*/
-
-
-
-
-
-
-
-
-
-
-
     fetchDatas();
   }, []);
+
+  //console.log(FAQ);
 
   //Check if loading is complete before rendering
   if (Loading) {
     return <Loader />;
   }
   //If loading is complete, render DOM
-  else {
-    /*
-    //Getting all FAQ jsons
-    let thoseFAQArticleNames = [];
-    let AllFAQDatas = [];
-
-    for (let i in Data2) {
-      //console.log(Data2[i].download_url)
-      thoseFAQArticleNames.push(Data2[i].name);
-    }
-    //console.log(thoseFAQArticleNames);
-
-    for (let i in thoseFAQArticleNames) {
-      const requestThis = axios.get(
-        "https://raw.githubusercontent.com/" +
-          userName +
-          "/" +
-          repoName +
-          "/main/Faq/" +
-          thoseFAQArticleNames[i],
-      );
-
-      axios.all([requestThis]).then(
-        axios.spread((...responses) => {
-          const responseOnly = responses[0].data;
-          AllFAQDatas.push(responseOnly);
-        }),
-      );
-    }
-    console.log(AllFAQDatas.length);
-    console.log(AllFAQDatas);
-*/
+  else if (FAQ.length) {
     return (
       <Router>
         <div className="app">
@@ -270,7 +213,7 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
 
-              <Faq data1={Data2} />
+              <Faq data1={FAQ} />
               <Footer />
             </Route>
 
