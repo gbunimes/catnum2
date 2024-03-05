@@ -1,0 +1,442 @@
+/***RESPONSIVE***/
+
+/**********1233*********/
+@media (max-width: 1233px) {
+	.homepage img,
+	.logoLoader {
+		max-width: 450px;
+	}
+
+	.logoLoader2 {
+		margin: 0 auto 30px auto !important;
+	}
+	.homepage {
+		width: 100vw;
+		height: 100vh !important;
+		padding-top: 17vh !important;
+	}
+}
+
+/**********1164*********/
+@media (max-width: 1164px) {
+	.catalogueTitleWrap {
+		justify-content: center;
+	}
+
+	.catalogue {
+		margin: 12vh auto 0 0 !important;
+	}
+
+	.catalogueWrap {
+		margin: 4vh auto;
+	}
+}
+
+/**********1024*********/
+@media (max-width: 1024px) {
+	.artVideo {
+		width: 100% !important;
+		height: 50% !important;
+		padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
+	}
+}
+
+/**********829*********/
+@media (max-width: 829px) {
+	.homepage img,
+	.logoLoader {
+		max-width: 350px;
+	}
+
+	.logoLoader2 {
+		margin: 0 auto 30px auto !important;
+	}
+	.homepage {
+		padding: 0px !important;
+
+		padding-top: 50px !important;
+
+		justify-content: unset !important;
+	}
+
+	.homepage h1 {
+		font-size: 26px;
+	}
+	.idCardWrapper {
+		width: 100%;
+	}
+
+	.idCard {
+		width: 100%;
+		height: 150px;
+	}
+	.articlePage {
+		width: 100% !important;
+	}
+	.articlePage h1 {
+		width: 95%;
+	}
+
+	.article {
+		width: 90%;
+		margin: 15px auto;
+	}
+
+	.outerSearch {
+		display: none;
+	}
+	nav {
+		justify-content: center;
+		border-radius: unset;
+	}
+
+	.linkFa form {
+		position: unset;
+		display: flex;
+		margin: auto;
+	}
+	.faqPage,
+	.articlePage {
+		margin-top: 20vh !important;
+	}
+	.catalogue {
+		margin: 25vh auto 0 0 !important;
+	}
+		.articleSection{
+		width: unset;
+		min-width: 85%;
+		margin: 15px 0;
+		border-radius: 0;
+	}
+
+
+}
+
+/**********602*********/
+@media (max-width: 602px) {
+	.linkFa {
+		margin: auto;
+	}
+	.outerSearch {
+		display: unset;
+	}
+
+	nav {
+		border-radius: unset;
+		right: 0;
+		width: 100%;
+	}
+
+	.linkFa form {
+		display: none;
+		position: unset;
+		margin: auto auto 25px auto;
+	}
+
+	.linkfa form button {
+		background-color: var(--uOrange) !important;
+		color: white !important;
+	}
+
+	.article .CollLink {
+		margin: 15px auto !important;
+	}
+	.homepage h1 {
+		font-size: 22px;
+	}
+	.logoLoader {
+		max-height: 100px;
+	}
+	.faqPage {
+		max-width: unset !important;
+		width: 100% !important;
+	}
+
+	.faqIntro h1 {
+		font-size: 20px;
+	}
+	.faqIntro p {
+		font-size: 16px;
+		text-align: justify;
+	}
+	.Collapsible {
+		padding: 10px;
+	}
+
+	.Collapsible .Collapsible {
+		padding: 0;
+	}
+
+	.Collapsible__trigger {
+		display: block;
+		font-size: 18px;
+		text-align: center;
+
+		margin: auto;
+		width: 90% !important;
+	}
+
+	.Collapsible .Collapsible .Collapsible__trigger {
+		font-size: 17px;
+		text-align: left;
+		padding: 10px;
+	}
+
+	.Collapsible .Collapsible .Collapsible__trigger::before {
+		display: none;
+	}
+
+	.Collapsible__contentOuter {
+		border-radius: 0;
+		background: transparent;
+	}
+
+	.Collapsible h2 {
+		font-size: 17px;
+	}
+
+	.Collapsible p {
+		max-width: 100%;
+		border-radius: 7px;
+		margin: 10px auto;
+		background: rgba(255, 255, 255, 0.9);
+		box-shadow: unset;
+	}
+
+	footer #serviceReview {
+		display: none;
+	}
+	.myPage {
+		padding: 0px !important;
+	}
+
+	.card {
+		width: 100%;
+		width: 45%;
+		width: 48%;
+		margin: 35px auto !important;
+		height: fit-content;
+	}
+
+	.card:hover .downerCard {
+		transition: 0.4s;
+		display: flex;
+		-webkit-animation: scale-in-top 0.3s
+			cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+		animation: scale-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	}
+
+	.card > * {
+		border-radius: 0px;
+	}
+
+	.downerCard {
+		display: none;
+		margin: 0 auto;
+		background-color: rgba(255, 255, 255, 1);
+		border-radius: 7px;
+	}
+
+	.card img {
+		width: 100%;
+	}
+	nav {
+		margin: auto;
+		background: unset;
+		background-color: white;
+		flex-direction: column;
+		width: 98%;
+		border-radius: unset;
+	}
+
+	footer {
+		width: 90%;
+		border-radius: unset;
+		margin: auto;
+		align-self: center;
+		position: unset;
+		margin-top: 10vh;
+	}
+
+	.numTitle {
+		width: 100%;
+		text-align: center;
+	}
+
+	nav .logo {
+		display: none;
+	}
+	nav .logoSmall {
+		display: inline-block;
+	}
+
+	nav .menu {
+		margin: auto;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+	.rightNav {
+		width: 95% !important;
+	}
+	nav .menu li:not(.subList li) {
+		width: object-fit;
+		padding: 5px 7px;
+
+		border-radius: 5px;
+		text-align: center;
+		display: flex;
+		letter-spacing: 2px;
+		border: 1px solid rgba(0, 0, 0, 0.5);
+		margin: 10px 5px;
+	}
+
+	nav .menu li a {
+		margin: 0;
+		font-size: 13px;
+	}
+
+	nav .menu li:hover {
+		background-color: var(--uOrange);
+		border-color: var(--uOrange);
+		color: var(--whiteish) !important;
+	}
+
+	nav .menu .list li:hover a {
+		border-color: inherit;
+		font-weight: inherit;
+	}
+
+	.menu li {
+		position: unset;
+	}
+
+	.subList {
+		top: 150px;
+		left: 0;
+		width: 98%;
+		border-radius: unset;
+		background-color: transparent;
+	}
+
+	.subList::before {
+		display: none;
+	}
+
+	.subList::after {
+		top: -17px;
+	}
+	.subList li,
+	.subList li:first-of-type,
+	.subList li:last-of-type {
+		border-radius: 0 !important;
+	}
+
+	.subList li {
+		margin: 0px !important;
+		padding: 10px;
+	}
+
+	.subList li a {
+		color: var(--blackish) !important;
+	}
+	.myPage {
+		margin: 30vh auto 0 0 !important;
+	}
+
+	.catalogue {
+		margin: 25vh auto 0 0 !important;
+	}
+
+	.catalogueWrap {
+		margin: 1vh auto;
+	}
+
+	.homepage {
+		margin: 25px auto !important;
+	}
+	.socket {
+		margin-left: -100px;
+	}
+
+	.articlePage h1 {
+		font-size: 22px;
+	}
+
+	.articlePage {
+		align-content: center;
+	}
+	.articlePage img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.articlePage h2 {
+		font-size: 18px;
+	}
+
+	.articlePage .subTitle {
+		font-size: 18px;
+	}
+
+	.articlePage p {
+		font-size: 17px;
+	}
+	.linkBox h2 {
+		font-size: 18px;
+	}
+
+	.articleSection{
+		width: unset;
+		min-width: 85%;
+		margin: 15px 0;
+		border-radius: 0;
+	}
+		.articleSection .CollLink {
+	margin: 15px auto;
+}
+}
+
+/**********403*********/
+@media (max-width: 403px) {
+	.logoLoader {
+		max-height: 75px;
+		max-width: 250px !important;
+	}
+	nav .logoSmall {
+		margin: 10px 15px 10px auto;
+	}
+
+	.numTitle {
+		font-size: 16.5px;
+	}
+	.idCard p {
+		position: relative;
+		bottom: unset;
+		right: unset;
+		margin: auto;
+		font-size: 18px;
+	}
+	.homepage h1 {
+		font-size: 18px !important;
+		text-align: center;
+		pointer-events: none;
+		letter-spacing: 3px;
+		color: var(--uOrange);
+		padding: 7px 14px;
+		font-family: "Oswald", sans-serif;
+		font-weight: 400;
+		margin: 0 auto 25px auto;
+	}
+
+	.cardTitle {
+		font-size: 15px !important;
+	}
+}
+
+/**********385*********/
+@media (max-width: 385px) {
+	.catalogue {
+		margin: 30vh auto 0 0 !important;
+	}
+}

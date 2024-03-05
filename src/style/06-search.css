@@ -1,0 +1,39 @@
+/***SEARCH***/
+
+.linkBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	padding: 15px;
+	animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		0.2s both;
+}
+
+.linkBox a {
+	text-align: justify;
+	transition: 0.4s;
+	font-size: 20px;
+	border-radius: 7px;
+	margin: 15px auto;
+	width: fit-content;
+	padding: 25px;
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.08);
+}
+
+.linkBox a i {
+	color: var(--uOrange);
+	margin-right: 10px;
+	font-size: 22px;
+	transform: scale(1);
+}
+
+.linkBox a:hover {
+	transform: scale(1.04);
+}
+.linkBox h2 {
+	font-size: 22px;
+}

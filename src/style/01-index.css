@@ -1,0 +1,102 @@
+/***INDEX***/
+
+/***COMPONENTS STYLES***/
+@import "./02-animations.css";
+@import "./03-loader.css";
+@import "./04-homepage.css";
+@import "./05-header.css";
+@import "./06-search.css";
+@import "./07-footer.css";
+@import "./08-catalogue.css";
+@import "./09-faq.css";
+@import "./10-article.css";
+@import "./11-responsive.css";
+
+/*Mulish and Oswald Fonts import*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400&display=swap");
+
+body,
+html {
+  /*Color Variables*/
+  --blackish: #0e0d0d;
+  --whiteish: #f9f7fd;
+  --uOrange: #e84e24;
+  --uLightOrange: #fbba00;
+  --uBlue: #1c9cd8;
+  --uGrey: #434341;
+
+  /*Basic Font setup*/
+  font-family: "Mulish", sans-serif;
+  font-display: swap;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-weight: 400;
+  color: var(--blackish);
+
+  /*General*/
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+
+  /*Background setup*/
+  background-color: var(--whiteish);
+  background: url("./background/background.webp");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+/*Basic link and text setup*/
+a,
+p {
+  font-size: 18px;
+  color: var(--blackish);
+  transition: 0.4s;
+  text-decoration: none;
+}
+a:focus,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*general settings*/
+.app {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+}
+
+/*Pages general settings*/
+.myPage {
+  height: auto;
+  min-height: 70vh;
+  width: 90vw;
+  min-width: 90vw;
+  margin: 15vh auto;
+  margin: 15vh auto auto auto;
+  padding: 20px;
+}
+
+/*Watermark settings*/
+.downCop {
+  pointer-events: none;
+  width: 100%;
+  height: fit-content;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 4px 4px 10px 4px;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 10px auto;
+}

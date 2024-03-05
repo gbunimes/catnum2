@@ -1,0 +1,82 @@
+/***FOOTER***/
+
+/*General*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: var(--blackish);
+  text-transform: uppercase;
+  padding: 15px;
+  z-index: 1000;
+  border-radius: 17px 0 0 0;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+/*Title*/
+.numStateTitle {
+  font-size: 13px !important;
+  font-weight: 400;
+  margin: auto;
+  padding-bottom: 10px;
+  pointer-events: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+/*Link texts and images*/
+footer a {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Link texts*/
+footer a p {
+  margin: 0 10px;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+/*Link images*/
+footer a img {
+  height: 100%;
+  padding-top: 10px;
+  mix-blend-mode: multiply;
+}
+
+/*Tooltip*/
+footer #serviceReview {
+  text-transform: none !important;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  border-radius: 17px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
+  background-color: white;
+
+  color: var(--blackish);
+  font-weight: normal;
+  padding: 15px;
+  text-align: center;
+  text-align: justify;
+  pointer-events: none;
+  transition: 0.4s;
+  border: 2px solid var(--uOrange);
+  text-shadow: none !important;
+  -webkit-animation: scale-in-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.myArrow {
+  background-color: var(--uOrange) !important;
+  display: none;
+}

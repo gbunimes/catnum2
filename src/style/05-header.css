@@ -1,0 +1,264 @@
+/***HEADER***/
+
+/*General navigation*/
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  justify-content: space-around;
+
+  width: fit-content;
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blackish);
+
+  text-transform: uppercase;
+  padding: 3px 10px;
+  z-index: 1000;
+  border-radius: 0 0 17px 0;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+/*Left menu - Logo*/
+nav .logo {
+  margin: 10px auto;
+  height: 45px;
+}
+
+/*Left menu - mini Logo for responsive*/
+nav .logoSmall {
+  margin: 10px 30px 10px auto;
+  height: 45px;
+  display: none;
+}
+
+/*Right menu*/
+.rightNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  transition: all 0.5s !important;
+  width: fit-content;
+}
+
+/*Title & menu*/
+.secondLogoWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px auto;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+/*Title*/
+.numTitle {
+  font-family: "oswald", sans-serif;
+  color: var(--uOrange);
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin: auto;
+  padding: 0 0 10px 0;
+  pointer-events: none;
+}
+
+/*Menu*/
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Nav Links*/
+.menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu li a {
+  display: inline-block;
+  font-size: 15px;
+  margin: 0 1rem;
+  transition: 0.4s;
+  overflow: hidden;
+  align-self: center;
+}
+
+.menu li a:hover {
+  text-decoration: none;
+  transition: 0.4s;
+  text-shadow: 0 0 1px;
+}
+
+/**Sub-nav*/
+.subList {
+  display: none;
+  z-index: 5000;
+  position: absolute;
+  top: 27px;
+  left: -7px;
+  list-style-type: none;
+  text-transform: capitalize;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  border-radius: 17px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
+  background-color: var(--uOrange);
+  font-weight: normal;
+  width: fit-content;
+  padding: 2px;
+  transition: 0.4s;
+  text-shadow: none !important;
+  -webkit-animation: scale-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.subList::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  top: -6px;
+  background-color: var(--uOrange);
+  height: 12px;
+  width: 12px;
+}
+
+.subList::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 20px;
+}
+
+/**Sub-nav links*/
+.subList li {
+  transition: 0.4s;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white !important;
+  color: var(--blackish);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  padding: 3px 5px;
+}
+
+.subList li:first-of-type {
+  border-radius: 15px 15px 0 0;
+}
+
+.subList li:last-of-type {
+  border-radius: 0 0 15px 15px;
+  border: none;
+}
+
+.subList li a {
+  z-index: 1005;
+  margin: 2px;
+  padding: 5px 2px;
+}
+
+.list svg {
+  fill: var(--uOrange) !important;
+  width: 18px;
+}
+
+.list2:hover .subList2 {
+  display: block;
+}
+
+.list3 {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+/*SearchBox*/
+
+.linkFa {
+  margin: 15px;
+  min-height: 45px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.linkFa form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  position: absolute;
+  background: white;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  top: -10px;
+  height: 50px;
+  padding: 5px 15px;
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.08);
+  width: fit-content;
+  border-radius: 7px 7px;
+  transition: 0.4s;
+  display: none;
+  -webkit-animation: scale-in-hor-left 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-hor-left 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  cursor: auto;
+}
+
+.linkFa form input {
+  outline: none !important;
+  border: unset;
+  text-decoration: none;
+  box-shadow: unset !important;
+  background: rgba(0, 0, 0, 0.05);
+  height: 80%;
+  padding: 0 5px;
+}
+
+.linkFa form button {
+  display: block;
+  color: var(--uOrange) !important;
+  font-size: 20px;
+  background: none;
+  border: unset;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 15px;
+  padding: 7px;
+  transition: 0.4s;
+  border-radius: 7px;
+}
+
+.linkFa form button:hover {
+  background-color: var(--uOrange);
+  color: white !important;
+}
+
+.outerSearch {
+  display: block;
+  color: var(--uOrange) !important;
+  font-size: 20px;
+}
+
+.linkFa:hover form {
+  display: flex;
+}
+
+.linkFa:hover .outerSearch {
+  visibility: hidden;
+}
