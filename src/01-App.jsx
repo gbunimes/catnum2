@@ -26,7 +26,7 @@ import Article from "./08-Article.jsx";
 import Search from "./09-Search.jsx";
 
 /***DATAS***/
-
+import myTok from "./data/MyTok.json";
 /*let Data02 = GetFaqQuestions();*/
 //Get all Json pages in folder
 /*let Data03 = GetJsonArticles();*/
@@ -47,7 +47,7 @@ export default function App() {
 
   let userName = "gbunimes";
   let repoName = "catnumData";
-  let token = "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";
+  let token = myTok.myTok;
 
   //Get all categories
   const requestOne = axios.get(
@@ -59,7 +59,7 @@ export default function App() {
   );
 
   //Get and store datas before rendering
-  useEffect(() => {
+  useState(() => {
     async function fetchDatas() {
       //Github data fetch
       const octokit = new Octokit({
@@ -177,7 +177,7 @@ export default function App() {
     return <Loader />;
   }
   //If loading is complete, render DOM
-  else if (FAQ.length) {
+  else {
     return (
       <Router>
         <div className="app">
@@ -266,6 +266,7 @@ export default function App() {
 
 /*TODO*/
 /*
+0 - store token in local uncommited jsonFile
 0 - remove octokit
 0 - voir article service snap + 0 etu et renommer en accompagnement pédagogique
 0 - voir ticketink link demat
