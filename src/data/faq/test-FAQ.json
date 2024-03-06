@@ -1,0 +1,112 @@
+{
+  "profil": "",
+  "titre": "Test FAQ",
+  "sousArticle": [
+    {
+      "profil": "",
+      "titre": "Catégorie Test pour tout le monde",
+      "soustitre": "Ceci est un sous-titre",
+      "paragraphe": "Ceci est un paragraphe",
+      "souligne": "Ceci est un paragraphe souligné",
+      "italique": "Ceci est un paragraphe italique",
+      "gras": "Ceci est un paragraphe gras",
+      "quote": "Ceci est une quote / alerte",
+      "image": "Tw1.jpg",
+      "video": "Ajouter-une-application-a-une-equipe.mp4",
+      "lien": {
+        "texte": "Test lien",
+        "url": "https://www.unimes.fr/fr/index.html"
+      },
+      "lienDoc": {
+        "texte": "Test document",
+        "url": "Amphi-A4_PDF.pdf"
+      },
+      "contenu": [
+        {
+          "profil": "2-3",
+          "titre": "Sous-catégorie Test enseignants/personnels",
+          "soustitre": "Ceci est un sous-titre",
+          "paragraphe": "Ceci est un paragraphe",
+          "souligne": "Ceci est un paragraphe souligné",
+          "italique": "Ceci est un paragraphe italique",
+          "gras": "Ceci est un paragraphe gras",
+          "quote": "Ceci est une quote / alerte",
+          "image": "Tw1.jpg",
+          "video": "Ajouter-une-application-a-une-equipe.mp4",
+          "lien": {
+            "texte": "Test lien",
+            "url": "https://www.unimes.fr/fr/index.html"
+          },
+          "lienDoc": {
+            "texte": "Test document",
+            "url": "Amphi-A4_PDF.pdf"
+          }
+        },
+        {
+          "profil": "1",
+          "titre": "Sous-catégorie Test etudiants",
+          "soustitre": "Ceci est un sous-titre",
+          "paragraphe": "Ceci est un paragraphe",
+
+          "souligne": "Ceci est un paragraphe souligné",
+          "italique": "Ceci est un paragraphe italique",
+          "gras": "Ceci est un paragraphe gras",
+          "quote": "Ceci est une quote / alerte",
+          "image": "Tw1.jpg",
+          "video": "Ajouter-une-application-a-une-equipe.mp4",
+          "lien": {
+            "texte": "Test lien",
+            "url": "https://www.unimes.fr/fr/index.html"
+          },
+          "lienDoc": {
+            "texte": "Test document",
+            "url": "Amphi-A4_PDF.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "profil": "1",
+      "titre": "Catégorie Test uniquement etudiants",
+      "soustitre": "Ceci est un sous-titre",
+      "paragraphe": "Ceci est un paragraphe",
+
+      "souligne": "Ceci est un paragraphe souligné",
+      "italique": "Ceci est un paragraphe italique",
+      "gras": "Ceci est un paragraphe gras",
+      "quote": "Ceci est une quote / alerte",
+      "image": "Tw1.jpg",
+      "video": "Ajouter-une-application-a-une-equipe.mp4",
+      "lien": {
+        "texte": "Test lien",
+        "url": "https://www.unimes.fr/fr/index.html"
+      },
+      "lienDoc": {
+        "texte": "Test document",
+        "url": "Amphi-A4_PDF.pdf"
+      },
+      "contenu": [
+        {
+          "profil": "1",
+          "titre": "Sous-catégorie Test étudiants",
+          "soustitre": "Ceci est un sous-titre",
+          "paragraphe": "Ceci est un paragraphe",
+          "souligne": "Ceci est un paragraphe souligné",
+          "italique": "Ceci est un paragraphe italique",
+          "gras": "Ceci est un paragraphe gras",
+          "quote": "Ceci est une quote / alerte",
+          "image": "Tw1.jpg",
+          "video": "Ajouter-une-application-a-une-equipe.mp4",
+          "lien": {
+            "texte": "Test lien",
+            "url": "https://www.unimes.fr/fr/index.html"
+          },
+          "lienDoc": {
+            "texte": "Test document",
+            "url": "Amphi-A4_PDF.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}

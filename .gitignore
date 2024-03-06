@@ -11,7 +11,9 @@
 # production
 /build
 /src/data/MyTok.json
-
+/public/doc/Belenios_admin.mp4
+/public/doc/Impression_MobilityPrint.mp4
+/public/doc/hamac_agents.mp4
 # misc
 .DS_Store
 .env.local

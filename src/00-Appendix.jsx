@@ -61,7 +61,7 @@ export function CheckTag() {
 }
 
 //Get all Json pages from folder into Json array
-/*
+
 export function GetJsonArticles() {
   const allPages = require.context("./data/articles", true);
 
@@ -92,7 +92,7 @@ export function GetFaqQuestions() {
   });
   return data;
 }
-*/
+
 //Setting Articles Links according to Json pages in data/articles
 export function GetArticlesLinks(props) {
   let myArray = [];
