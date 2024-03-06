@@ -7,13 +7,14 @@ import { Redirect } from "react-router";
 import {
   RegexThis,
   CheckProfile,
+  IsntEmpty,
   GetJsonArticles,
   GetArticlesLinks,
   GetFaqQuestions,
 } from "./00-Appendix.jsx";
 import axios from "axios";
 const { Octokit } = require("@octokit/rest");
-// or: import { Octokit } from "@octokit/rest";
+
 /***PAGES & COMPONENTS***/
 import Loader from "./02-Loader.jsx";
 import Header from "./03-Header.jsx";
@@ -25,7 +26,7 @@ import Article from "./08-Article.jsx";
 import Search from "./09-Search.jsx";
 
 /***DATAS***/
-
+import myTok from "./data/MyTok.json";
 /*let Data02 = GetFaqQuestions();*/
 //Get all Json pages in folder
 /*let Data03 = GetJsonArticles();*/
@@ -39,11 +40,14 @@ export default function App() {
   const [Data3, setData3] = useState({});
   const [Data4, setData4] = useState({});
   const [Data5, setData5] = useState({});
-  const [AllFAQ, setAllFAQ] = useState([]);
+  const [thoseFAQArticle, setthoseFAQArticle] = useState([]);
+  const [FAQ, setFAQ] = useState([]);
+
+  /*const [AllFAQ, setAllFAQ] = useState({});*/
 
   let userName = "gbunimes";
   let repoName = "catnumData";
-  let token = "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";
+  let token = myTok.myTok;
 
   //Get all categories
   const requestOne = axios.get(
@@ -55,7 +59,7 @@ export default function App() {
   );
 
   //Get and store datas before rendering
-  useEffect(() => {
+  useState(() => {
     async function fetchDatas() {
       //Github data fetch
       const octokit = new Octokit({
@@ -127,6 +131,38 @@ export default function App() {
           setData3(myArticlesdatas.data);
           setData4(myImagesDatas.data);
           setData5(myDocDatas.data);
+
+          //Getting all FAQ links
+
+          {
+            myFAQdatas.data.map((R, i) => getThoseFaqDatas(R, i));
+          }
+          function getThoseFaqDatas(R, i) {
+            thoseFAQArticle.push(
+              "https://raw.githubusercontent.com/" +
+                userName +
+                "/" +
+                repoName +
+                "/main/Faq/" +
+                R.name,
+            );
+          }
+
+          {
+            thoseFAQArticle.map((R, i) => getThoseFaqDatas2(R, i));
+          }
+
+          function getThoseFaqDatas2(R, i) {
+            //console.log(R);
+            const requestFaq = axios.get(R);
+
+            axios.all([requestFaq]).then(
+              axios.spread((...responses) => {
+                const responseFaq = responses[0];
+                FAQ.push(responseFaq.data);
+              }),
+            );
+          }
           setLoading(false);
         }),
       );
@@ -134,41 +170,14 @@ export default function App() {
     fetchDatas();
   }, []);
 
+  //console.log(FAQ);
+
   //Check if loading is complete before rendering
   if (Loading) {
     return <Loader />;
   }
   //If loading is complete, render DOM
   else {
-    /*
-    //Getting all FAQ jsons
-    let thoseFAQArticleNames = [];
-    let AllFAQDatas = [];
-
-    console.log(AllFAQDatas);
-
-    for (let i in Data2) {
-      thoseFAQArticleNames.push(Data2[i].name);
-    }
-    for (let i in thoseFAQArticleNames) {
-      const requestThis = axios.get(
-        "https://raw.githubusercontent.com/" +
-          userName +
-          "/" +
-          repoName +
-          "/main/Faq/" +
-          thoseFAQArticleNames[i],
-      );
-      axios.all([requestThis]).then(
-        axios.spread((...responses) => {
-          const responseOnly = responses[0].data;
-          AllFAQDatas.push(responseOnly);
-        }),
-      );
-    }
-*/
-    //console.log(AllFAQDatas);
-
     return (
       <Router>
         <div className="app">
@@ -204,7 +213,7 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
 
-              <Faq data1={Data2} />
+              <Faq data1={FAQ} />
               <Footer />
             </Route>
 
@@ -257,6 +266,7 @@ export default function App() {
 
 /*TODO*/
 /*
+0 - store token in local uncommited jsonFile
 0 - remove octokit
 0 - voir article service snap + 0 etu et renommer en accompagnement pédagogique
 0 - voir ticketink link demat

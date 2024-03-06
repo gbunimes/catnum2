@@ -30,36 +30,98 @@ import myTok from "./data/MyTok.json";
 export default function App() {
   //Get datas
   const [Loading, setLoading] = useState(true);
-  const [githubData, setGithubData] = useState([]);
+  const [Data1, setData1] = useState({});
+  const [Data2, setData2] = useState({});
+  const [Data3, setData3] = useState({});
+  const [Data4, setData4] = useState({});
+  const [Data5, setData5] = useState({});
+  const [thoseFAQArticle, setthoseFAQArticle] = useState([]);
+  const [FAQ, setFAQ] = useState([]);
 
   let userName = "gbunimes";
   let repoName = "catnumData";
   let token = myTok.myTok;
 
   //Get all categories
-  let myUrl =
+  const requestOne = axios.get(
     "https://raw.githubusercontent.com/" +
-    userName +
-    "/" +
-    repoName +
-    "/master/Catalogue.json";
+      userName +
+      "/" +
+      repoName +
+      "/master/Catalogue.json",
+  );
 
-  const fetchData = () => {
-    //return fetch(`https://api.github.com/users/${userName}`)
-    return fetch(myUrl)
-    
+  //Get and store datas before rendering
 
-      .then((response) => response.json())
-      .then((data) => setGithubData(data))
-    .then(setLoading(false));
+  useState(() => {
+    async function fetchDatas() {
+      //Github data fetch
+      const octokit = new Octokit({
+        auth: token,
+      });
 
-  };
+      //Get FAQ datas
+      let myFAQdatas = await octokit.request(
+        "GET /repos/{owner}/{repo}/contents/{path}",
+        {
+          owner: userName,
+          repo: repoName,
+          path: "Faq",
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        },
+      );
+      /*console.log(myFAQdatas.data);*/
 
-  useEffect(() => {
-    fetchData();
+      ///Catalogue data fetch & data setting + loading removing
+      axios.all([requestOne]).then(
+        axios.spread((...responses) => {
+          const responseOne = responses[0];
+          setData1(responseOne.data);
+          setData2(myFAQdatas.data);
+          //Getting all FAQ links
+          /*
+          {
+            myFAQdatas.data.map((R, i) => getThoseFaqDatas(R, i));
+          }
+          function getThoseFaqDatas(R, i) {
+            thoseFAQArticle.push(
+              "https://raw.githubusercontent.com/" +
+                userName +
+                "/" +
+                repoName +
+                "/main/Faq/" +
+                R.name,
+            );
+          }
+
+          {
+            thoseFAQArticle.map((R, i) => getThoseFaqDatas2(R, i));
+          }
+
+          function getThoseFaqDatas2(R, i) {
+            //console.log(R);
+            const requestFaq = axios.get(R);
+
+            axios.all([requestFaq]).then(
+              axios.spread((...responses) => {
+                const responseFaq = responses[0];
+                FAQ.push(responseFaq.data);
+              }),
+            );
+          }
+          */
+          setLoading(false);
+        }),
+      );
+    }
+    fetchDatas();
   }, []);
 
-  console.log(githubData);
+  console.log(Data1)
+  console.log(Data2)
+
 
   //Check if loading is complete before rendering
   if (Loading) {
@@ -102,7 +164,7 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
 
-              <Faq data1={githubData} />
+              <Faq data1={Data2} />
               <Footer />
             </Route>
 

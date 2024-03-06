@@ -12,10 +12,10 @@ import ReactPlayer from "react-player";
 /*PAGE*/
 export default function Faq(data) {
   console.log(data)
-  console.log(data.data1)
+  console.log(data.data1[0])
   ///Check collapses profile
   function checkOuterCollapses(props, i) {
-    console.log(props);
+    //console.log(props);
     //Questions compatible with every profile & different from "0" (hidden Questions)
     if (props.profil != "0" && IsEmpty(props.profil)) {
       return DisplayCollapse(props, i);
