@@ -33,18 +33,20 @@ let Data03 = GetJsonArticles();
 
 /***APP***/
 export default function App() {
+
   //Get datas
   const [Loading, setLoading] = useState(true);
   const [Data1, setData1] = useState({});
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
 
+
   /*********************************For posterior import with Axios - START*****************************************
   const [Data4, setData4] = useState({});
   const [Data5, setData5] = useState({});
   //Json file urls
-  let Json1 = "https://catnum.comu.unimes.fr/etat-service.php";
-  let Json2 = "https://catnum.comu.unimes.fr/etat-service.php";
+  let Json1 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+  let Json2 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
   //axios config
   const requestOne = axios.get(Json1);
   const requestTwo = axios.get(Json2);
@@ -171,22 +173,34 @@ export default function App() {
   }
 }
 
-/*TODO*/
 
+/*TODO*/
 /*
 
-0 - add new textype à FAQ & article  (tableaux)
-0 - voir pour template FAQ
-0 - voir pour fetch dossier partagé
-0 - implement keywords for articles
-0 - etat des service implementation
+0 - close collapse FAQ
+0 - tri longueur cat sur page catalogue ?! manuel ou double down section ?
+0 - etat des service implementation - Voir guillaume
+
+0 - video link or video local ??
+
+0 - store token in local uncommited jsonFile
+0 - remove octokit
+
+0 - voir ticketink link demat
+
 0 - notice utilisation Json Article, cat et FAQs
-0.9 - CHeck numérique unimes pour contenu
-0 - distant storage json
-0 - check all vid link for distant storage
+
 -----------------------------------------------------------------
-0 - simplify functions (FAQ ??)
------------------------------------------------------------------
+
+V - simplify functions (FAQ ??)
+V- voir fetch pour github
+V - CHeck numérique unimes pour contenu
+V - faq filter in article : first profile filter bug !!!
+V - voir article service snap + 0 etu et renommer en accompagnement pédagogique
+X - add new textype à FAQ & article  (tableaux)
+V - voir pour template FAQ
+V - check all vid link for distant storage
+V - implement keywords for articles
 V - checkcaps for parentcategory
 V - regroup display for article and faq ?
 V- add new textype à FAQ (gras, etc...)
