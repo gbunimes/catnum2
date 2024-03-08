@@ -33,13 +33,11 @@ let Data03 = GetJsonArticles();
 
 /***APP***/
 export default function App() {
-
   //Get datas
   const [Loading, setLoading] = useState(true);
   const [Data1, setData1] = useState({});
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
-
 
   /*********************************For posterior import with Axios - START*****************************************
   const [Data4, setData4] = useState({});
@@ -173,25 +171,22 @@ export default function App() {
   }
 }
 
-
 /*TODO*/
 /*
 
+
+!!!ATTENTION, lien menu ver demat.unimes pas GLPI!!!
+
 0 - close collapse FAQ
-0 - tri longueur cat sur page catalogue ?! manuel ou double down section ?
 0 - etat des service implementation - Voir guillaume
-
-0 - video link or video local ??
-
-0 - store token in local uncommited jsonFile
-0 - remove octokit
-
-0 - voir ticketink link demat
 
 0 - notice utilisation Json Article, cat et FAQs
 
 -----------------------------------------------------------------
 
+
+
+V - tri longueur cat sur page catalogue ?! manuel ou double down section ?
 V - simplify functions (FAQ ??)
 V- voir fetch pour github
 V - CHeck numérique unimes pour contenu

@@ -11,8 +11,8 @@ import ReactPlayer from "react-player";
 
 /*PAGE*/
 export default function Faq(data) {
-  console.log(data)
-  console.log(data.data1[0])
+ 
+
   ///Check collapses profile
   function checkOuterCollapses(props, i) {
     //console.log(props);

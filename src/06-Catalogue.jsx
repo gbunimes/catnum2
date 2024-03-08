@@ -5,21 +5,6 @@ import { RegexThis, CheckProfile, CheckTag, IsEmpty } from "./00-Appendix.jsx";
 
 /*PAGE*/
 export default function Catalogue(data) {
-  //Alphabetical sort ?
-  /*
-  let catData = data.data1.sort(function (a, b) {
-    if (a.texte < b.texte) {
-      return -1;
-    }
-    if (a.texte > b.texte) {
-      return 1;
-    }
-    return 0;
-  });
-*/
-  //Manual sorting
-
-  let catData = data.data1;
 
   //Check cards profile
   function checkProfilForCard(props, i) {
@@ -142,7 +127,7 @@ export default function Catalogue(data) {
         </div>
         {/*Dynamic card creation from Json file*/}
         <div className="catalogueWrap">
-          {catData.map((R, i) => checkProfilForCard(R, i))}
+          {data.data1.map((R, i) => checkProfilForCard(R, i))}
         </div>
       </div>
     </div>
