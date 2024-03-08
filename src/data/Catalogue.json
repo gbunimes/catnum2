@@ -1,5 +1,5 @@
 [
-    {
+  {
     "texte": "Assistance & Pilotage - extraction",
     "icon": "fa-solid fa-handshake-angle",
     "profil": ""
@@ -8,30 +8,24 @@
     "texte": "Identité numérique",
     "icon": "fa-regular fa-id-card"
   },
-
-
-
   {
     "texte": "Audiovisuel",
     "icon": "fa-solid fa-video"
   },
-
-
   {
     "icon": "fa-solid fa-gear",
     "texte": "Outils collaboratifs"
   },
-
   {
     "icon": "fa-solid fa-laptop",
     "texte": "Poste de travail"
   },
-    {
+  {
     "icon": "fa-solid fa-people-arrows",
     "texte": "Ressources humaines",
     "profil": "2-3"
   },
-    {
+  {
     "icon": "fa-solid fa-notes-medical",
     "texte": "Vie de campus"
   },
@@ -40,27 +34,23 @@
     "profil": "",
     "texte": "Sécurité"
   },
-
   {
     "profil": "2-3",
     "icon": "fa-solid fa-diagram-project",
     "texte": "DEMAT"
   },
 
-
-    {
+  {
     "icon": "fa-solid fa-comment",
     "profil": "",
     "texte": "Communication"
   },
-
-
   {
     "icon": "fa-solid fa-microscope",
     "texte": "Recherche",
     "profil": "2-3"
   },
-    {
+  {
     "icon": "fa-solid fa-graduation-cap",
     "texte": "Pédagogie & scolarité"
   },
@@ -70,3 +60,10 @@
     "profil": "3"
   }
 ]
+
+
+
+
+
+
+

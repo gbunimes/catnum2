@@ -180,12 +180,11 @@ export default function App() {
 0 - close collapse FAQ
 0 - etat des service implementation - Voir guillaume
 
-0 - notice utilisation Json Article, cat et FAQs
 
 -----------------------------------------------------------------
 
-
-
+V - notice utilisation Json Article, cat et FAQs
+V - video link or video local ??
 V - tri longueur cat sur page catalogue ?! manuel ou double down section ?
 V - simplify functions (FAQ ??)
 V- voir fetch pour github

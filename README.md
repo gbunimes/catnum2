@@ -1,18 +1,21 @@
 # Catalogue & assistance Services Numériques Unîmes
 
-![Preview](https://raw.githubusercontent.com/gbunimes/catnumData/master/1.webp)
+Notice CATEGORIES:
 
-AAA :
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/Tuto-catégories.webp)
 
-		aaa		
-	
+Notice ARTICLES:
 
-BBB :
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/Tuto-Articles.webp)
 
-		bbb
+Notice FAQ:
+
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/Tuto-FAQ.webp)
 
 
-![Preview](https://raw.githubusercontent.com/gbunimes/catnumData/master/2.webp)
-![Preview](https://raw.githubusercontent.com/gbunimes/catnumData/master/3.webp)
-![Preview](https://raw.githubusercontent.com/gbunimes/catnumData/master/4.webp)
+Présentation générale :
 
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/1.webp)
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/2.webp)
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/3.webp)
+![Preview](https://raw.githubusercontent.com/gbunimes/catnum2/master/public/4.webp)
