@@ -25,9 +25,7 @@ import Search from "./09-Search.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "../public/servicesOLD/Catalogue.json";
-import Data05 from "../public/services/Catalogue.json";
-
+import Data01 from "../public/services/Catalogue.json";
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
@@ -45,12 +43,12 @@ export default function App() {
   const [Data4, setData4] = useState({});
 
   //axios config
-  const request = axios.get(Data04);
+  const request1 = axios.get(Data04);
 
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-      axios.all([request]).then(
+      axios.all([request1]).then(
         axios.spread((...responses) => {
           const responseOne = responses[0];
           setData1(Data01);
@@ -64,9 +62,8 @@ export default function App() {
     getDatas();
   }, []);
 
-  console.log(Data01);
-  console.log(Data04)
-  console.log(Data4);
+  //console.log(Data1);
+  //console.log(Data4);
 
   //Check if loading is complete before rendering
   if (Loading) {
@@ -97,7 +94,7 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
               <Catalogue data1={Data1} data2={Data3} />
-              <Footer />
+              <Footer data={Data4} />
             </Route>
             {/*FAQ*/}
             <Route
@@ -110,7 +107,7 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
               <Faq data1={Data2} />
-              <Footer />
+              <Footer data={Data4} />
             </Route>
 
             {/*SEARCH*/}
@@ -124,28 +121,28 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
               <Search data1={Data3} />
-              <Footer />
+              <Footer data={Data4} />
             </Route>
             {/*ARTICLES*/}
             {GetArticlesLinks(Data03).map((item) => (
               <Route key={"1-" + item} exact path={"/etudiants/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />
-                <Footer />
+                <Footer data={Data4} />
               </Route>
             ))}
             {GetArticlesLinks(Data03).map((item) => (
               <Route key={"2-" + item} exact path={"/enseignants/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />
-                <Footer />
+                <Footer data={Data4} />
               </Route>
             ))}
             {GetArticlesLinks(Data03).map((item) => (
               <Route key={"3-" + item} exact path={"/personnels/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />
-                <Footer />
+                <Footer data={Data4} />
               </Route>
             ))}
             {/*REDIRECT*/}
