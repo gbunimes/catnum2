@@ -3,14 +3,12 @@
 /*General*/
 .catalogue {
 	height: auto;
-	/*width: 90vw;*/
 	width: 98vw;
 	align-self: center;
 	display: flex;
 	flex-direction: column;
 	max-width: 100%;
 	min-height: 90vh;
-
 	flex-wrap: wrap;
 	padding-top:5vh;
 }
@@ -47,21 +45,16 @@
 .catalogueWrap {
 	padding: 0;
 	padding-top: 45px;
-
 	align-self: center;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	/*margin: 5vh auto auto auto;*/
 	margin: auto;
-
-
 }
 
 /*Cards*/
 .card {
-	/*width: 190px;*/
 	width: 170px;
 	height: fit-content;
 	margin: 10px;

@@ -39,7 +39,6 @@ export default function App() {
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
 
-
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
@@ -50,6 +49,38 @@ export default function App() {
     }
     getDatas();
   }, []);
+
+
+
+  /*********************************For posterior import with Axios - START*****************************************
+  const [Data4, setData4] = useState({});
+  const [Data5, setData5] = useState({});
+  //Json file urls
+  let Json1 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+  let Json2 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+  //axios config
+  const requestOne = axios.get(Json1);
+  const requestTwo = axios.get(Json2);
+  //Data fetch  
+  useEffect(() => {
+    async function getDatas() {
+      axios.all([requestOne, requestTwo]).then(
+        axios.spread((...responses) => {
+          const responseOne = responses[0];
+          const responseTwo = responses[1];
+          setData1(Data01);
+          setData2(Data02);
+          setData3(Data03);
+          setData4(responseOne.data);
+          setData5(responseTwo.data);
+          setLoading(false);
+        }),
+      );
+    }
+    getDatas();
+  }, []);  
+  *********************************For posterior import with Axios - END******************************************/
+  
 
   //Check if loading is complete before rendering
   if (Loading) {

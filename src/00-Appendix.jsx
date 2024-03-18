@@ -93,8 +93,6 @@ export function GetFaqQuestions() {
   return data;
 }
 
-//../public/data/
-
 //Setting Articles Links according to Json pages in data/articles
 export function GetArticlesLinks(props) {
   let myArray = [];
