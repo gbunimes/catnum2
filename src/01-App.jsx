@@ -26,19 +26,14 @@ import Search from "./09-Search.jsx";
 /***DATAS***/
 //Get all categories
 import Data01 from "../public/servicesOLD/Catalogue.json";
+import Data05 from "../public/services/Catalogue.json";
 
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
 //Get services availability
-
-//let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
-//let Data04 = "https://catnum.comu.unimes.fr/servicesOLD/Catalogue.json";
-
-import Data04 from "../public/services/Catalogue.json";
-
-
+let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
 
 /***APP***/
 export default function App() {
@@ -50,52 +45,28 @@ export default function App() {
   const [Data4, setData4] = useState({});
 
   //axios config
-  //const request = axios.get(Data04);
+  const request = axios.get(Data04);
 
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-      ///axios.all([request]).then(
-        ///axios.spread((...responses) => {
-          //const responseOne = responses[0];
-          setData1(Data01);
-          setData2(Data02);
-          setData3(Data03);
-          //setData4(responseOne.data);
-          setLoading(false);
-        //}),
-      //);
-    }
-    getDatas();
-  }, []);
-
-console.log(Data01)
-console.log(Data04)
-
-  //await fetch(Data04).then(x => x.json());
-
-  /*********************************For posterior import with Axios - START*****************************************
-  //axios config
-  const requestOne = axios.get(Json1);
-  //Data fetch  
-  useEffect(() => {
-    async function getDatas() {
-      axios.all([requestOne, requestTwo]).then(
+      axios.all([request]).then(
         axios.spread((...responses) => {
           const responseOne = responses[0];
-          const responseTwo = responses[1];
           setData1(Data01);
           setData2(Data02);
           setData3(Data03);
           setData4(responseOne.data);
-          setData5(responseTwo.data);
           setLoading(false);
         }),
       );
     }
     getDatas();
-  }, []);  
-  *********************************For posterior import with Axios - END******************************************/
+  }, []);
+
+  console.log(Data01);
+  console.log(Data04)
+  console.log(Data4);
 
   //Check if loading is complete before rendering
   if (Loading) {
