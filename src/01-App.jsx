@@ -25,11 +25,13 @@ import Search from "./09-Search.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "../public/data/Catalogue.json";
+import Data01 from "../public/services/Catalogue.json";
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
+//Get services availability
+let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
 
 /***APP***/
 export default function App() {
@@ -38,29 +40,33 @@ export default function App() {
   const [Data1, setData1] = useState({});
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
+  const [Data4, setData4] = useState({});
+
+  //axios config
+  //const request = axios.get(Data04);
 
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-      setData1(Data01);
-      setData2(Data02);
-      setData3(Data03);
-      setLoading(false);
+//      axios.all([request]).then(
+  //      axios.spread((...responses) => {
+    //      const responseOne = responses[0];
+          setData1(Data01);
+          setData2(Data02);
+          setData3(Data03);
+      //    setData4(responseOne.data);
+          setLoading(false);
+        //}),
+      //);
     }
     getDatas();
   }, []);
 
-
+  //await fetch(Data04).then(x => x.json());
 
   /*********************************For posterior import with Axios - START*****************************************
-  const [Data4, setData4] = useState({});
-  const [Data5, setData5] = useState({});
-  //Json file urls
-  let Json1 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
-  let Json2 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
   //axios config
   const requestOne = axios.get(Json1);
-  const requestTwo = axios.get(Json2);
   //Data fetch  
   useEffect(() => {
     async function getDatas() {
@@ -80,7 +86,6 @@ export default function App() {
     getDatas();
   }, []);  
   *********************************For posterior import with Axios - END******************************************/
-  
 
   //Check if loading is complete before rendering
   if (Loading) {
