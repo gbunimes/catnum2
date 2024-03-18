@@ -25,13 +25,20 @@ import Search from "./09-Search.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "../public/services/Catalogue.json";
+import Data01 from "../public/servicesOLD/Catalogue.json";
+
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
 //Get services availability
-let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+
+//let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+//let Data04 = "https://catnum.comu.unimes.fr/servicesOLD/Catalogue.json";
+
+import Data04 from "../public/services/Catalogue.json";
+
+
 
 /***APP***/
 export default function App() {
@@ -48,19 +55,22 @@ export default function App() {
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-//      axios.all([request]).then(
-  //      axios.spread((...responses) => {
-    //      const responseOne = responses[0];
+      ///axios.all([request]).then(
+        ///axios.spread((...responses) => {
+          //const responseOne = responses[0];
           setData1(Data01);
           setData2(Data02);
           setData3(Data03);
-      //    setData4(responseOne.data);
+          //setData4(responseOne.data);
           setLoading(false);
         //}),
       //);
     }
     getDatas();
   }, []);
+
+console.log(Data01)
+console.log(Data04)
 
   //await fetch(Data04).then(x => x.json());
 

@@ -63,7 +63,7 @@ export function CheckTag() {
 //Get all Json pages from folder into Json array
 
 export function GetJsonArticles() {
-  const allPages = require.context("../public/services/articles", true);
+  const allPages = require.context("../public/servicesOLD/articles", true);
 
   const allPagesList = allPages.keys().map((page) => allPages(page));
   let data = allPagesList.filter((element, index) => {
@@ -85,7 +85,7 @@ export function GetJsonArticles() {
 
 //Get all FAQ questions from folder into Json array
 export function GetFaqQuestions() {
-  const allFAQ = require.context("../public/services/faq", true);
+  const allFAQ = require.context("../public/servicesOLD/faq", true);
   const allFaqList = allFAQ.keys().map((page) => allFAQ(page));
   let data = allFaqList.filter((element, index) => {
     return allFaqList.indexOf(element) === index;
