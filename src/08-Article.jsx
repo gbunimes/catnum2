@@ -221,7 +221,6 @@ export default function Article(data) {
       return (
         <div key="artCollapsibles" className="artCollapsibles">
           <Collapsible
-            onOpen={() => closeAllFAQbut(R.titre + i)}
             key={R.titre + i}
             id={R.titre + i}
             trigger={R.titre + " : " + "questions fréquentes"}

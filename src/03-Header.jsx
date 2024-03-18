@@ -54,11 +54,11 @@ export default function Header(data) {
   //Check user profile and set "FAQ" nav link accordingly
   function checkFaqLink() {
     if (currentProfil == 1) {
-      return "/foire-aux-questions-etudiants";
+      return "/assistance-etudiants";
     } else if (currentProfil == 2) {
-      return "/foire-aux-questions-enseignants";
+      return "/assistance-enseignants-chercheurs";
     } else if (currentProfil == 3) {
-      return "/foire-aux-questions-personnels";
+      return "/assistance-personnels";
     } else {
       return "/accueil";
     }
@@ -136,28 +136,26 @@ export default function Header(data) {
             </li>
             {/*3 - FAQ */}
             <li>
-              <a href={checkFaqLink()}>FAQ</a>
+              <a href={checkFaqLink()}>Assistance</a>
             </li>
             {/*4 - Assistance */}
-            <li className="list list2 list3">
-              Assistance {/*Dynamic sublist creation from Json file*/}
-              <ul className="subList subList2">
-                <li>
-                  <a href="https://wiki.unimes.fr/doku.php" target="_blank">
-                    documentation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://demat.unimes.fr/"
-                    target="_blank"
-                  >
-                    Demande d'assistance
-                  </a>
-                </li>
-                <li>{checkProfil()}</li>
-              </ul>
-            </li>
+
+            {/*<li className="list list2 list3">
+                          Assistance
+                          <ul className="subList subList2">
+                            <li>
+                              <a href="https://wiki.unimes.fr/doku.php" target="_blank">
+                                documentation
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://demat.unimes.fr/" target="_blank">
+                                Demande d'assistance
+                              </a>
+                            </li>
+                            <li>{checkProfil()}</li>
+                          </ul>
+                        </li>*/}
           </ul>
         </div>
         {/*5 - Search */}

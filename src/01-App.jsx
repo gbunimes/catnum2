@@ -22,6 +22,7 @@ import Catalogue from "./06-Catalogue.jsx";
 import Faq from "./07-Faq.jsx";
 import Article from "./08-Article.jsx";
 import Search from "./09-Search.jsx";
+import Assistance from "./10-Assistance.jsx";
 
 /***DATAS***/
 //Get all categories
@@ -32,6 +33,7 @@ let Data02 = GetFaqQuestions();
 let Data03 = GetJsonArticles();
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+import Data05 from "../public/services/FAQCatalogue.json";
 
 /***APP***/
 export default function App() {
@@ -41,6 +43,7 @@ export default function App() {
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
   const [Data4, setData4] = useState({});
+  const [Data5, setData5] = useState({});
 
   //axios config
   const request1 = axios.get(Data04);
@@ -55,6 +58,7 @@ export default function App() {
           setData2(Data02);
           setData3(Data03);
           setData4(responseOne.data);
+          setData5(Data05);
           setLoading(false);
         }),
       );
@@ -96,8 +100,9 @@ export default function App() {
               <Catalogue data1={Data1} data2={Data3} />
               <Footer data={Data4} />
             </Route>
+
             {/*FAQ*/}
-            <Route
+            {/*           <Route
               exact
               path={[
                 "/foire-aux-questions-etudiants",
@@ -107,6 +112,21 @@ export default function App() {
             >
               <Header data1={CheckProfile()} />
               <Faq data1={Data2} />
+              <Footer data={Data4} />
+            </Route>
+*/}
+
+            {/*ASSISTANCE*/}
+            <Route
+              exact
+              path={[
+                "/assistance-etudiants",
+                "/assistance-enseignants-chercheurs",
+                "/assistance-personnels",
+              ]}
+            >
+              <Header data1={CheckProfile()} />
+              <Assistance data1={CheckProfile()} data2={Data5} />
               <Footer data={Data4} />
             </Route>
 
