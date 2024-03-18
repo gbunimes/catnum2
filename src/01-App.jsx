@@ -25,7 +25,9 @@ import Search from "./09-Search.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "./data/Catalogue.json";
+//import Data01 from "./data/Catalogue.json";
+import Data01 from "../public/data/testDataServer.json"
+
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
@@ -38,6 +40,8 @@ export default function App() {
   const [Data1, setData1] = useState({});
   const [Data2, setData2] = useState({});
   const [Data3, setData3] = useState({});
+
+
 
   /*********************************For posterior import with Axios - START*****************************************
   const [Data4, setData4] = useState({});
