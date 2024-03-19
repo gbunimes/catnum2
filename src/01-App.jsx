@@ -26,7 +26,6 @@ import Assistance from "./10-Assistance.jsx";
 
 /***DATAS***/
 //Get all categories
-//import Data01 from "../public/services/Catalogue.json";
 let Data01 =
   "https://raw.githubusercontent.com/webunimes/services/master/Catalogue.json";
 //Get all FAQ Questions in folder
@@ -36,18 +35,11 @@ let Data03 = GetJsonArticles();
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
 //Get all FAQ categories
-///import Data05 from "../public/services/FAQCatalogue.json";
 let Data05 =
   "https://raw.githubusercontent.com/webunimes/services/master/FAQCatalogue.json";
-
-//let Data06 = "https://api.github.com/repos/{owner}/{repo}/contents/{path}"
-
 let Data06 = "https://api.github.com/repos/webunimes/services/contents/faq";
-
 let Data07 =
   "https://api.github.com/repos/webunimes/services/contents/articles";
-//console.log(Data06);
-//console.log(Data07);
 
 /***APP***/
 export default function App() {
@@ -62,6 +54,7 @@ export default function App() {
   const [Data7, setData7] = useState({});
 
   let allFaq = [];
+  let allArticle = [];
 
   //axios config
   const request1 = axios.get(Data01);
@@ -69,7 +62,6 @@ export default function App() {
   const request3 = axios.get(Data05);
   const request4 = axios.get(Data06);
   const request5 = axios.get(Data07);
-
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
@@ -80,7 +72,6 @@ export default function App() {
           const responseThree = responses[2];
           const responseFour = responses[3];
           const responseFive = responses[4];
-
           setData1(responseOne.data);
           setData2(Data02);
           setData3(Data03);
@@ -88,34 +79,14 @@ export default function App() {
           setData5(responseThree.data);
           setData6(responseFour.data);
           setData7(responseFive.data);
-
           setLoading(false);
         }),
       );
     }
-
     getDatas();
   }, []);
 
-  getDatas2();
 
-  async function getDatas2() {
-    for (let i in Data6) {
-      let thisData = Data6[i].download_url;
-      //console.log(thisData);
-      const DataFetch = await axios.get(thisData);
-      const DataFetch2 = DataFetch.data;
-      allFaq.push(DataFetch2);
-      /*
-    let Data08 = "https://raw.githubusercontent.com/webunimes/services/main/faq/Emloi%20du%20temps.json";
-  const [Data8, setData8] = useState({});
-  const request8 = axios.get(Data08);
-     const response8 = responses[5];
-   setData8(response8.data);
-  console.log(Data8);
-  */
-    }
-  }
   /*
   console.log(Data1);
   console.log(Data2);
@@ -123,9 +94,11 @@ export default function App() {
   console.log(Data4);
   console.log(Data5);
   console.log(Data6);
-  console.log(Data7);
   */
-  console.log(allFaq);
+
+  //console.log(Data7);
+
+
 
   //Check if loading is complete before rendering
   if (Loading) {
@@ -133,6 +106,31 @@ export default function App() {
   }
   //If loading is complete, render DOM
   else {
+      getDatas2();
+  getDatas3();
+
+  async function getDatas2() {
+    for (let i in Data6) {
+      let thisData = Data6[i].download_url;
+      const DataFetch = await axios.get(thisData);
+      const DataFetch2 = DataFetch.data;
+      allFaq.push(DataFetch2);
+    }
+  }
+
+  async function getDatas3() {
+    for (let i in Data7) {
+      let thisData = Data7[i].download_url;
+      //console.log(thisData)
+      const DataFetch = await axios.get(thisData);
+      const DataFetch2 = DataFetch.data;
+      allArticle.push(DataFetch2);
+    }
+  }
+
+    //console.log(allFaq);
+  console.log(allArticle);
+  console.log(allArticle[5]);
     //DOM
     return (
       <Router>
@@ -155,7 +153,7 @@ export default function App() {
               ]}
             >
               <Header data1={CheckProfile()} />
-              <Catalogue data1={Data1} data2={Data3} />
+              <Catalogue data1={Data1} data2={allArticle} />
               <Footer data={Data4} />
             </Route>
 
