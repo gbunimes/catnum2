@@ -26,14 +26,28 @@ import Assistance from "./10-Assistance.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "../public/services/Catalogue.json";
+//import Data01 from "../public/services/Catalogue.json";
+let Data01 =
+  "https://raw.githubusercontent.com/webunimes/services/master/Catalogue.json";
 //Get all FAQ Questions in folder
 let Data02 = GetFaqQuestions();
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
-import Data05 from "../public/services/FAQCatalogue.json";
+//Get all FAQ categories
+///import Data05 from "../public/services/FAQCatalogue.json";
+let Data05 =
+  "https://raw.githubusercontent.com/webunimes/services/master/FAQCatalogue.json";
+
+//let Data06 = "https://api.github.com/repos/{owner}/{repo}/contents/{path}"
+
+let Data06 = "https://api.github.com/repos/webunimes/services/contents/faq";
+
+let Data07 =
+  "https://api.github.com/repos/webunimes/services/contents/articles";
+//console.log(Data06);
+//console.log(Data07);
 
 /***APP***/
 export default function App() {
@@ -44,30 +58,74 @@ export default function App() {
   const [Data3, setData3] = useState({});
   const [Data4, setData4] = useState({});
   const [Data5, setData5] = useState({});
+  const [Data6, setData6] = useState({});
+  const [Data7, setData7] = useState({});
+
+  let allFaq = [];
 
   //axios config
-  const request1 = axios.get(Data04);
+  const request1 = axios.get(Data01);
+  const request2 = axios.get(Data04);
+  const request3 = axios.get(Data05);
+  const request4 = axios.get(Data06);
+  const request5 = axios.get(Data07);
 
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-      axios.all([request1]).then(
+      axios.all([request1, request2, request3, request4, request5]).then(
         axios.spread((...responses) => {
           const responseOne = responses[0];
-          setData1(Data01);
+          const responseTwo = responses[1];
+          const responseThree = responses[2];
+          const responseFour = responses[3];
+          const responseFive = responses[4];
+
+          setData1(responseOne.data);
           setData2(Data02);
           setData3(Data03);
-          setData4(responseOne.data);
-          setData5(Data05);
+          setData4(responseTwo.data);
+          setData5(responseThree.data);
+          setData6(responseFour.data);
+          setData7(responseFive.data);
+
           setLoading(false);
         }),
       );
     }
+
     getDatas();
   }, []);
 
-  //console.log(Data1);
-  //console.log(Data4);
+  getDatas2();
+
+  async function getDatas2() {
+    for (let i in Data6) {
+      let thisData = Data6[i].download_url;
+      //console.log(thisData);
+      const DataFetch = await axios.get(thisData);
+      const DataFetch2 = DataFetch.data;
+      allFaq.push(DataFetch2);
+      /*
+    let Data08 = "https://raw.githubusercontent.com/webunimes/services/main/faq/Emloi%20du%20temps.json";
+  const [Data8, setData8] = useState({});
+  const request8 = axios.get(Data08);
+     const response8 = responses[5];
+   setData8(response8.data);
+  console.log(Data8);
+  */
+    }
+  }
+  /*
+  console.log(Data1);
+  console.log(Data2);
+  console.log(Data3);
+  console.log(Data4);
+  console.log(Data5);
+  console.log(Data6);
+  console.log(Data7);
+  */
+  console.log(allFaq);
 
   //Check if loading is complete before rendering
   if (Loading) {
