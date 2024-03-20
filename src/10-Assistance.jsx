@@ -1,9 +1,10 @@
-/*****HEADER******/
+/*****ASSISTANCE******/
 
 import {
-  /*RegexThis,*/
+  RegexThis,
   CheckProfile,
   IsEmpty,
+  CheckTag,
   /*GetJsonArticles,
   GetArticlesLinks,
   GetFaqQuestions,*/
@@ -12,6 +13,7 @@ import {
 /***COMPONENT***/
 
 export default function Assistance(data) {
+  console.log(data);
   //user profile
   let currentProfil = data.data1;
   //console.log(currentProfil);
@@ -22,16 +24,36 @@ export default function Assistance(data) {
     //console.log(props);
     //Questions compatible with every profile & different from "0" (hidden Questions)
     if (props.profil != "0" && IsEmpty(props.profil)) {
-//      console.log(props + " " + "ok for every profile");
+      //      console.log(props + " " + "ok for every profile");
 
-      return <div key={ i} ><p key={i + props.texte}>{props.texte} </p></div>
+      return (
+        //Displays problematic links
+        <a
+        className="problemCard"
+          key={props.texte + i}
+          href={CheckTag() + "/" + RegexThis(props.texte)}
+        >
+          <div key={i}>
+            <p key={i + props.texte}>{props.texte} </p>
+          </div>
+        </a>
+      );
     } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
-  //    console.log(props + " " + "ok for this profile");
+      //    console.log(props + " " + "ok for this profile");
 
       //Questions compatible with this profile & different from "0" (hidden Questions)
-      return <div key={ i} ><p key={i + props.texte}>{props.texte} </p></div>
-
-
+      return (
+        <a
+        className="problemCard"
+        
+          key={props.texte + i}
+          href={CheckTag() + "/" + RegexThis(props.texte)}
+        >
+        <div key={i}>
+          <p key={i + props.texte}>{props.texte} </p>
+        </div>
+        </a>
+      );
     }
   }
 
@@ -80,35 +102,42 @@ export default function Assistance(data) {
 
   //DOM
   return (
-    <div className="faqPage catalogue">
-            <div className="catalogueTitleWrap">
-          {(() => {
-            let thisProfile = CheckProfile();
-            let thisTitre;
-            if (thisProfile == "1") {
-              let thisTitre = "étudiants";
-              return (
-                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
-              );
-            }
-            if (thisProfile == "2") {
-              let thisTitre = "Enseignants";
-              return (
-                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
-              );
-            }
-            if (thisProfile == "3") {
-              let thisTitre = "Personnels";
-              return (
-                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
-              );
-            }
-          })()}
-        </div>
+    <div className="faqPage catalogue assistPage">
+      <div className="catalogueTitleWrap">
+        {(() => {
+          let thisProfile = CheckProfile();
+          let thisTitre;
+          if (thisProfile == "1") {
+            let thisTitre = "étudiants";
+            return (
+              <h1 className="catalogueTitle">
+                {"Assistance" + " " + thisTitre}
+              </h1>
+            );
+          }
+          if (thisProfile == "2") {
+            let thisTitre = "Enseignants";
+            return (
+              <h1 className="catalogueTitle">
+                {"Assistance" + " " + thisTitre}
+              </h1>
+            );
+          }
+          if (thisProfile == "3") {
+            let thisTitre = "Personnels";
+            return (
+              <h1 className="catalogueTitle">
+                {"Assistance" + " " + thisTitre}
+              </h1>
+            );
+          }
+        })()}
+      </div>
       <div className="faqIntro">
         <p>
           Cet espace vous apporte les réponse aux problèmatiques les plus
-          fréquemment rencontrées, dans le cas où vous ne trouveriez pas la
+          fréquemment rencontrées.<br/>
+          Dans le cas où vous ne trouveriez pas la
           réponse à votre question, le service de demande d'assistance,
           disponible en bas de page, est à votre disposition.
         </p>
@@ -116,6 +145,11 @@ export default function Assistance(data) {
       <div className="problematicsWrapper">
         {/*Dynamic Collapsible creation from Json file*/}
         {data.data2.map((R, i) => checkOuterProblems(R, i))}
+      </div>
+
+      <div className="helpCardsWrapper">
+        <div className="helpCards1"></div>
+        <div className="helpCards2"></div>
       </div>
     </div>
   );

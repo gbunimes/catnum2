@@ -83,8 +83,6 @@ export function GetJsonArticles() {
   return data;
 }
 
-
-
 //Get all FAQ questions from folder into Json array
 export function GetFaqQuestions() {
   const allFAQ = require.context("../public/services/faq", true);
@@ -92,6 +90,7 @@ export function GetFaqQuestions() {
   let data = allFaqList.filter((element, index) => {
     return allFaqList.indexOf(element) === index;
   });
+
   return data;
 }
 

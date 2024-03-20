@@ -49,16 +49,32 @@ footer a {
 
 /*Link texts*/
 footer a p {
-  margin: 0 10px;
+  margin: 0 15px 0 5px;
   padding-top: 10px;
   font-size: 15px;
 }
 
+.onlyFa {
+  margin: 0 0 0 10px !important;
+}
+
 /*Link images*/
-footer a img {
+footer a i {
   height: 100%;
   padding-top: 10px;
-  mix-blend-mode: multiply;
+  font-size: 25px;
+
+  /*mix-blend-mode: multiply;*/
+}
+
+.fa-circle-check {
+  color: #4aa84a;
+}
+.fa-circle-question {
+  color: orange;
+}
+.fa-circle-xmark {
+  color: #ca1111;
 }
 
 /*Tooltip*/

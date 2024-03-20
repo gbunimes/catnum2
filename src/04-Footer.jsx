@@ -23,8 +23,9 @@ export default function Footer(props) {
                   href="https://www-apps.unimes.fr/etat-des-services/"
                   target="_blank"
                 >
-                  <img src="/img/ok.jpg" />
-                  <p>{props.ok}</p>
+                  <i className="fa-regular fa-circle-check "></i>
+                  <p className="onlyFa">{props.ok}</p>
+
                 </a>
               </div>
             );
@@ -35,10 +36,15 @@ export default function Footer(props) {
                   href="https://www-apps.unimes.fr/etat-des-services/"
                   target="_blank"
                 >
-                  <img src="/img/ok.jpg" />
+                  <i className="fa-regular fa-circle-check"></i>
+
                   <p>{props.ok}</p>
-                  <img src="/img/incertain.jpg" /> <p>{props.instable}</p>
-                  <img src="/img/down.jpg" /> <p>{props.ko}</p>
+
+                  <i className="fa-regular fa-circle-question"></i>
+
+                  <p>{props.instable}</p>
+                  <i className="fa-regular fa-circle-xmark"></i>
+                  <p>{props.ko}</p>
                 </a>
               </div>
             );
