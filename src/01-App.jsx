@@ -7,6 +7,7 @@ import { Redirect } from "react-router";
 import {
   RegexThis,
   CheckProfile,
+  GetFAQLinks,
   GetJsonArticles,
   GetArticlesLinks,
   GetFaqQuestions,
@@ -47,7 +48,6 @@ for (let i in DataTest){
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
 
-
 //import Data05 from "../public/services/FAQCatalogue.json";
 //let Data05 = "https://catnum.comu.unimes.fr/services/FAQCatalogue.json";
 import Data05 from "../public/services/FAQCatalogue.json";
@@ -56,11 +56,6 @@ import Data05 from "../public/services/FAQCatalogue.json";
 
 /*let Data06 = "https://catnum.comu.unimes.fr/services/FAQCatalogue.json";*/
 //let Data06 = "https://catnum.comu.unimes.fr/services/articles/antivirus.json";
-
-
-
-
-
 
 /***APP***/
 export default function App() {
@@ -85,7 +80,10 @@ export default function App() {
   useEffect(() => {
     async function getDatas() {
       axios
-        .all([request1,/* request2,  request3*/ request4/*, request5, request6*/])
+        .all([
+          request1,
+          /* request2,  request3*/ request4 /*, request5, request6*/,
+        ])
         .then(
           axios.spread((...responses) => {
             const responseOne = responses[0];
@@ -114,7 +112,6 @@ export default function App() {
   console.log(Data6);
   console.log(Data7);
 */
-
 
   //Check if loading is complete before rendering
   if (Loading) {
@@ -147,21 +144,31 @@ export default function App() {
               <Catalogue data1={Data1} data2={Data3} />
               <Footer data={Data4} />
             </Route>
-
             {/*FAQ*/}
-            {/*           <Route
-              exact
-              path={[
-                "/foire-aux-questions-etudiants",
-                "/foire-aux-questions-enseignants",
-                "/foire-aux-questions-personnels",
-              ]}
-            >
-              <Header data1={CheckProfile()} />
-              <Faq data1={Data2} />
-              <Footer data={Data4} />
-            </Route>
-*/}
+            {GetFAQLinks(Data5).map((item) => (
+              <Route key={"1-" + item} exact path={"/etudiants/" + item}>
+                <Header data1={CheckProfile()} />
+                <Faq data1={Data2} data2={Data05} />
+
+                <Footer data={Data4} />
+              </Route>
+            ))}
+            {GetFAQLinks(Data5).map((item) => (
+              <Route key={"2-" + item} exact path={"/enseignants/" + item}>
+                <Header data1={CheckProfile()} />
+                <Faq data1={Data2} data2={Data05} />
+
+                <Footer data={Data4} />
+              </Route>
+            ))}
+            {GetFAQLinks(Data5).map((item) => (
+              <Route key={"3-" + item} exact path={"/personnels/" + item}>
+                <Header data1={CheckProfile()} />
+                <Faq data1={Data2} data2={Data05} />
+
+                <Footer data={Data4} />
+              </Route>
+            ))}
 
             {/*ASSISTANCE*/}
             <Route
@@ -191,21 +198,21 @@ export default function App() {
               <Footer data={Data4} />
             </Route>
             {/*ARTICLES*/}
-            {GetArticlesLinks(Data03).map((item) => (
+            {GetArticlesLinks(Data3).map((item) => (
               <Route key={"1-" + item} exact path={"/etudiants/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />
                 <Footer data={Data4} />
               </Route>
             ))}
-            {GetArticlesLinks(Data03).map((item) => (
+            {GetArticlesLinks(Data3).map((item) => (
               <Route key={"2-" + item} exact path={"/enseignants/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />
                 <Footer data={Data4} />
               </Route>
             ))}
-            {GetArticlesLinks(Data03).map((item) => (
+            {GetArticlesLinks(Data3).map((item) => (
               <Route key={"3-" + item} exact path={"/personnels/" + item}>
                 <Header data1={CheckProfile()} />
                 <Article data1={Data3} data2={Data2} />

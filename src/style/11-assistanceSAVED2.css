@@ -3,19 +3,23 @@
 /*General*/
 
 .assistPage {
-	justify-content: space-around;
+	/*animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;*/
+	/*animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		0.25s both;*/
 }
-.assistPage .faqIntro p {
-	margin: auto;
-}
+
 .problematicsWrapper {
 	width: 100%;
 	height: 100%;
 	margin-top: 25px;
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
+	/*
+	animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		0.25s both;*/
 }
 
 .problematicsWrapper .problemCard {
@@ -46,6 +50,7 @@
 	padding: 10px 5px;
 	border-radius: 3px;
 	background: rgba(0, 0, 0, 0.03);
+	/*background: #38414a;*/
 	background: #2b3137;
 	padding: 10px;
 }
@@ -103,6 +108,12 @@
 	justify-content: center;
 	padding: 10px;
 	background: rgba(255, 255, 255, 0.5);
+}
+
+.helpCards1 {
+}
+
+.helpCards2 {
 }
 
 .helpCards h4 {

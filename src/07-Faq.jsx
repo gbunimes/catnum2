@@ -6,12 +6,17 @@ import {
   IsEmpty,
   IsntEmpty,
   DisplayCollapse,
+  CheckProfileFaq,
 } from "./00-Appendix.jsx";
 import ReactPlayer from "react-player";
 
 /*PAGE*/
 export default function Faq(data) {
- 
+
+
+  let myFaqProfile = CheckProfileFaq(data.data2);
+  //console.log(data.data2);
+  console.log(myFaqProfile.texte);
 
   ///Check collapses profile
   function checkOuterCollapses(props, i) {
@@ -31,13 +36,13 @@ export default function Faq(data) {
       <div className="faqPage myPage">
         <div className="faqIntro">
           {/*Dynamic Intro creation from Json file*/}
-          <h1>Foire aux questions</h1>
-          <p>
-            Cet espace vous apporte les réponse aux questions les plus
-            fréquemment posées, dans le cas où vous ne trouveriez pas la réponse
-            à votre question, le service de demande d'assistance, disponible
-            directement depuis le menu, est à votre disposition.
-          </p>
+          <h1>{myFaqProfile.texte}</h1>
+          {/*<p>
+                      Cet espace vous apporte les réponse aux questions les plus
+                      fréquemment posées, dans le cas où vous ne trouveriez pas la réponse
+                      à votre question, le service de demande d'assistance, disponible
+                      directement depuis le menu, est à votre disposition.
+                    </p>*/}
         </div>
         {/*Dynamic Collapsible creation from Json file*/}
         {data.data1.map((R, i) => checkOuterCollapses(R, i))}

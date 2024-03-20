@@ -3,22 +3,24 @@
 /*General*/
 
 .assistPage {
-	justify-content: space-around;
+	animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-.assistPage .faqIntro p {
-	margin: auto;
-}
+
 .problematicsWrapper {
 	width: 100%;
 	height: 100%;
 	margin-top: 25px;
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
+	animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		0.25s both;
 }
 
 .problematicsWrapper .problemCard {
+	/*background: rgba(255, 255, 255, 0.2);*/
 	background: rgba(232, 78, 36, 1);
 	display: flex;
 	position: relative;
@@ -33,6 +35,7 @@
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
 	border-radius: 7px;
 	background: rgba(255, 255, 255, 0.8);
+	/*	transform: rotate(3deg);*/
 	padding: 18px 8px;
 }
 
@@ -44,27 +47,35 @@
 	width: 100%;
 	height: 100%;
 	padding: 10px 5px;
-	border-radius: 3px;
+	border-radius: 2px;
+	/*background: rgba(232, 78, 36, 0.07);*/
 	background: rgba(0, 0, 0, 0.03);
+	background: #38414a;
 	background: #2b3137;
+
 	padding: 10px;
 }
 
 .problematicsWrapper .problemCard p {
 	pointer-events: none;
 	color: black;
+	/*color: var(--uOrange);*/
 	color: #eae7e7;
 	width: fit-content;
 	text-align: center;
 	font-size: 22px;
-	transform: rotate(0.9deg);
+	font-style: italic;
+	transform: rotate(1deg);
 	text-transform: uppercase;
+
 	font-weight: 500;
 	font-family: "Farsan", cursive;
+
+	font-style: normal;
 }
 
 .problematicsWrapper .problemCard:nth-of-type(odd) p {
-	transform: rotate(-0.9deg);
+	transform: rotate(-1deg);
 }
 
 .problematicsWrapper .problemCard:hover {
@@ -82,60 +93,4 @@
 	border-radius: 50%;
 	border: 1px solid white;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
-}
-
-.helpCardsWrapper {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-top: 50px;
-}
-
-.helpCards {
-	flex: 1;
-	margin: 0 20px;
-	flex-direction: column;
-	border-radius: 12px;
-	display: flex;
-	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 10px;
-	background: rgba(255, 255, 255, 0.5);
-}
-
-.helpCards h4 {
-	margin: 0 auto 10px auto;
-	text-align: center;
-	width: fit-content;
-	padding-bottom: 10px;
-	border-bottom: solid 1px rgba(0, 0, 0, 0.2);
-}
-
-.helpCards p {
-	margin: 3px 0;
-	font-size: 16px;
-}
-
-.helpCards a {
-	margin: 0 4px;
-	color: var(--uOrange) !important;
-	font-size: 16px;
-	font-weight: 500 !important;
-}
-
-.helpCards .CollLink {
-	margin: 15px 0;
-	margin: auto;
-	margin: 5px auto;
-
-	min-width: 150px;
-	transform: scale(1);
-	transition: 0.4s;
-}
-
-.helpCards .CollLink:hover {
-	transform: scale(1.01);
-	font-weight: inherit;
 }

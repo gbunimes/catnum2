@@ -123,112 +123,128 @@
     }
 }
 
-.card:nth-of-type(1)/*, .problematicsWrapper div:nth-of-type(1) */ {
+.card:nth-of-type(1),
+.problematicsWrapper a:nth-of-type(1) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.05s both;
 }
 
-.card:nth-of-type(2)/*, .problematicsWrapper div:nth-of-type(2) */ {
+.card:nth-of-type(2),
+.problematicsWrapper a:nth-of-type(2) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.1s both;
 }
 
-.card:nth-of-type(3)/*, .problematicsWrapper div:nth-of-type(3) */ {
+.card:nth-of-type(3),
+.problematicsWrapper a:nth-of-type(3) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.15s both;
 }
 
-.card:nth-of-type(4)/*, .problematicsWrapper div:nth-of-type(4) */ {
+.card:nth-of-type(4),
+.problematicsWrapper a:nth-of-type(4) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.55s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.2s both;
 }
 
-.card:nth-of-type(5)/*, .problematicsWrapper div:nth-of-type(5) */ {
+.card:nth-of-type(5),
+.problematicsWrapper a:nth-of-type(5) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.25s both;
 }
 
-.card:nth-of-type(6)/*, .problematicsWrapper div:nth-of-type(6) */ {
+.card:nth-of-type(6),
+.problematicsWrapper a:nth-of-type(6) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.85s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.3s both;
 }
 
-.card:nth-of-type(7)/*, .problematicsWrapper div:nth-of-type(7) */ {
+.card:nth-of-type(7),
+.problematicsWrapper a:nth-of-type(7) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.35s both;
 }
 
-.card:nth-of-type(8)/*, .problematicsWrapper div:nth-of-type(8) */ {
+.card:nth-of-type(8),
+.problematicsWrapper a:nth-of-type(8) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.15s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.4s both;
 }
 
-.card:nth-of-type(9)/*, .problematicsWrapper div:nth-of-type(9) */ {
+.card:nth-of-type(9),
+.problematicsWrapper a:nth-of-type(9) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.3s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.45s both;
 }
 
-.card:nth-of-type(10)/*, .problematicsWrapper div:nth-of-type(10) */ {
+.card:nth-of-type(10),
+.problematicsWrapper a:nth-of-type(10) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.45s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.5s both;
 }
 
-.card:nth-of-type(11)/*, .problematicsWrapper div:nth-of-type(11) */ {
+.card:nth-of-type(11),
+.problematicsWrapper a:nth-of-type(11) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.55s both;
 }
 
-.card:nth-of-type(12)/*, .problematicsWrapper div:nth-of-type(12) */ {
+.card:nth-of-type(12),
+.problematicsWrapper a:nth-of-type(12) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.75s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.6s both;
 }
 
-.card:nth-of-type(13)/*, .problematicsWrapper div:nth-of-type(13) */ {
+.card:nth-of-type(13),
+.problematicsWrapper a:nth-of-type(13) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.9s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.65s both;
 }
 
-.card:nth-of-type(14)/*, .problematicsWrapper div:nth-of-type(14) */ {
+.card:nth-of-type(14),
+.problematicsWrapper a:nth-of-type(14) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.05s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.7s both;
 }
 
-.card:nth-of-type(15)/*, .problematicsWrapper div:nth-of-type(15) */ {
+.card:nth-of-type(15),
+.problematicsWrapper a:nth-of-type(15) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
         0.75s both;
 }
 
-.card:nth-of-type(16)/*, .problematicsWrapper div:nth-of-type(16) */ {
+.card:nth-of-type(16),
+.problematicsWrapper a:nth-of-type(16) i {
     -webkit-animation: swing-in-top-fwd 0.5s
         cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.35s both;
     animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -266,6 +282,121 @@
         transform: scaleX(1);
         -webkit-transform-origin: 0% 0%;
         transform-origin: 0% 0%;
+        opacity: 1;
+    }
+}
+
+/*slate paragraph in ASSISTANCE*/
+
+.problematicsWrapper .problemCard:nth-of-type(1) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(2) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(3) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(4) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(5) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(6) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(7) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(8) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(9) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(10) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(11) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(12) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.75s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.75s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(13) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(14) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.85s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.85s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(15) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s both;
+}
+
+.problematicsWrapper .problemCard:nth-of-type(16) p {
+    -webkit-animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.95s both;
+    animation: sca 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.95s both;
+}
+
+@-webkit-keyframes sca {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        opacity: 1;
+    }
+}
+@keyframes sca {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
         opacity: 1;
     }
 }

@@ -39,6 +39,23 @@
 		height: 50% !important;
 		padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
 	}
+
+	.helpCardsWrapper {
+		flex-direction: column;
+	}
+
+	.helpCards {
+		max-width: 75%;
+		width: 75%;
+		margin: 10px auto;
+	}
+
+	.helpCards h4 {
+		width: 100%;
+		font-size: 16px;
+	}
+	.helpCards p {
+	}
 }
 
 /**********829*********/
@@ -112,6 +129,25 @@
 
 /**********602*********/
 @media (max-width: 602px) {
+		.problematicsWrapper .problemCard{
+			width: 80%;
+	margin: 25px 10px;
+		}
+
+		.problematicsWrapper .problemCard i{
+			left: 50%;
+			top: -15%!important;
+			transform: translateX(-50%)!important;
+			margin: 0;
+		}
+
+	.helpCards {
+		max-width: 96%;
+		width: 96%!important;
+		margin: 10px auto;
+		border-radius: unset;
+	}
+
 	.linkFa {
 		margin: auto;
 	}

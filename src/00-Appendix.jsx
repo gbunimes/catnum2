@@ -43,6 +43,39 @@ export function CheckProfile() {
   }
 }
 
+
+//Check selected user profile
+export function CheckProfileFaq(props) {
+
+  console.log(window.location.href)
+  console.log(props)
+  for (let i in props){
+      if (window.location.href.includes(RegexThis(props[i].texte))) {
+console.log("match")
+return props[i];
+  }
+
+   // console.log(props[i].texte)
+
+/*
+  // etudiants
+  if (window.location.href.includes("etudiants")) {
+    let currentProfil = "1";
+    return currentProfil;
+  } else if (window.location.href.includes("enseignants")) {
+    // enseignants
+    let currentProfil = "2";
+    return currentProfil;
+  } else if (window.location.href.includes("personnels")) {
+    // personnels
+    let currentProfil = "3";
+    return currentProfil;
+  }
+*/
+
+}
+}
+
 //create Tag from selected user profile
 export function CheckTag() {
   // etudiants
@@ -99,6 +132,16 @@ export function GetArticlesLinks(props) {
   let myArray = [];
   for (let i in props) {
     myArray.push(RegexThis(props[i].titre));
+  }
+  return myArray;
+}
+
+//Setting FAQ Links according to Json faq categories
+export function GetFAQLinks(props) {
+  /*console.log(props);*/
+  let myArray = [];
+  for (let i in props) {
+    myArray.push(RegexThis(props[i].texte));
   }
   return myArray;
 }

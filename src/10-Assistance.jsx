@@ -1,97 +1,71 @@
 /*****ASSISTANCE******/
 
-import {
-  RegexThis,
-  CheckProfile,
-  IsEmpty,
-  CheckTag,
-  /*GetJsonArticles,
-  GetArticlesLinks,
-  GetFaqQuestions,*/
-} from "./00-Appendix.jsx";
+import { RegexThis, CheckProfile, IsEmpty, CheckTag } from "./00-Appendix.jsx";
 
 /***COMPONENT***/
 
 export default function Assistance(data) {
-  console.log(data);
-  //user profile
   let currentProfil = data.data1;
-  //console.log(currentProfil);
-  //console.log(data.data2);
 
   ///Check problematic profile
   function checkOuterProblems(props, i) {
-    //console.log(props);
     //Questions compatible with every profile & different from "0" (hidden Questions)
     if (
       (props.profil != "0" && IsEmpty(props.profil)) ||
       (props.profil != "0" && props.profil.includes(CheckProfile()))
     ) {
-      //    console.log(props + " " + "ok for this profile");
-
-      //Questions compatible with this profile & different from "0" (hidden Questions)
       return (
         <a
           className="problemCard"
           key={props.texte + i}
           href={CheckTag() + "/" + RegexThis(props.texte)}
         >
-          <i class="fa-solid fa-circle-question"></i>
+          <i className="fa-solid fa-circle-question"></i>
           <div key={i}>
             <p key={i + props.texte}>{props.texte} </p>
-          </div><i class="fa-solid fa-circle-question"></i>
-          
+          </div>
+          <i className="fa-solid fa-circle-question"></i>
         </a>
       );
     }
   }
 
-  //Check user profile and set sublist links accordingly
-  /*
   function checkProfil() {
     if (currentProfil == 1) {
       return (
-        <a
-          href="https://services-numeriques.unimes.fr/files/2022/07/charte-pedago-etudiant.pdf"
-          target="_blank"
-        >
-          Charte d'utilisation
-        </a>
+        <p>
+          Consulter la
+          <a
+            href="https://services-numeriques.unimes.fr/files/2022/07/charte-pedago-etudiant.pdf"
+            target="_blank"
+          >
+            charte d'utilisation
+          </a>
+          .
+        </p>
       );
     } else if (
       (currentProfil != 1 && currentProfil == 2) ||
       currentProfil == 3
     ) {
       return (
-        <a
-          href="https://services-numeriques.unimes.fr/files/2022/07/charte-personnel-applicable.pdf"
-          target="_blank"
-        >
-          Charte d'utilisation
-        </a>
+        <p>
+          Consulter la
+          <a
+            href="https://services-numeriques.unimes.fr/files/2022/07/charte-personnel-applicable.pdf"
+            target="_blank"
+          >
+            charte d'utilisation
+          </a>
+          .
+        </p>
       );
     }
   }
-*/
-
-  /*
-  //Check user profile and set "FAQ" nav link accordingly
-  function checkFaqLink() {
-    if (currentProfil == 1) {
-      return "/foire-aux-questions-etudiants";
-    } else if (currentProfil == 2) {
-      return "/foire-aux-questions-enseignants";
-    } else if (currentProfil == 3) {
-      return "/foire-aux-questions-personnels";
-    } else {
-      return "/accueil";
-    }
-  }
-  */
 
   //DOM
   return (
-    <div className="faqPage catalogue assistPage">
+    <div className=" catalogue assistPage">
       <div className="catalogueTitleWrap">
         {(() => {
           let thisProfile = CheckProfile();
@@ -124,7 +98,7 @@ export default function Assistance(data) {
       </div>
       <div className="faqIntro">
         <p>
-          Cet espace vous apporte les réponse aux problèmatiques les plus
+          Cet espace vous apporte les réponses aux problématiques les plus
           fréquemment rencontrées.
           <br />
           Dans le cas où vous ne trouveriez pas la réponse à votre question, le
@@ -138,8 +112,51 @@ export default function Assistance(data) {
       </div>
 
       <div className="helpCardsWrapper">
-        <div className="helpCards1"></div>
-        <div className="helpCards2"></div>
+        <div className="helpCards helpCards1">
+          <h4>
+            Besoin d'assitance ? <br />
+            Vous avez d'autres questions concernant les services numériques ?
+          </h4>
+
+          {checkProfil()}
+
+          <p>
+            Parcourir la
+            <a href="https://wiki.unimes.fr/doku.php" target="_blank">
+              documentation
+            </a>
+            .
+          </p>
+          <p>
+            Faire une
+            <a
+              href="https://glpi.unimes.fr/front/helpdesk.public.php?create_ticket=1"
+              target="_blank"
+            >
+              demande d'assistance
+            </a>
+            .
+          </p>
+
+          <p>Téléphone: 0466364590.</p>
+          <p>Horaires: 7h45-18h00 les jours ouvrés.</p>
+        </div>
+        <div className="helpCards  helpCards2">
+          <h4>
+            Des questions concernant la plateforme de cours en ligne e-campus ?
+            Un besoin d'accompagnement ? <br />
+          </h4>
+
+          <p>
+            Contactez le
+            <a href="https://demat.unimes.fr/snap" target="_blank">
+              Service Numérique & d'Accompagnement Pédagogique (SNAP)
+            </a>
+            .
+          </p>
+          <p>Téléphone: 0466364628.</p>
+          <p>Horaires: 8h00-17h30 les jours ouvrés.</p>
+        </div>
       </div>
     </div>
   );
