@@ -108,18 +108,13 @@ export default function App() {
         const DataFetch = await axios.get(thisData);
         setArray((oldArray) => [...oldArray, DataFetch.data]);
       }
+      setLoading2(false);
+      setDom(true);
     }
 
     getDatas2();
   }, [Loading]);
 
-  console.log(array);
-  console.log(array.length);
-  if (array.length >= 70) {
-    console.log("ok");
-    setLoading2(false);
-    setDom(true);
-  }
   /*
   console.log(Data1);
   console.log(Data2);
@@ -127,9 +122,8 @@ export default function App() {
   console.log(Data4);
   console.log(Data5);
   console.log(Data6);
-    console.log(Data7);
-    */
-
+  console.log(Data7);
+*/
   //Check if loading is complete before rendering
   if (Loading2) {
     return <Loader />;
@@ -137,34 +131,7 @@ export default function App() {
   //If loading is complete, render DOM
   else {
     if (dom) {
-      /*
-  getDatas2();
-getDatas3();
-
-async function getDatas2() {
-  for (let i in Data6) {
-    let thisData = Data6[i].download_url;
-    const DataFetch = await axios.get(thisData);
-    const DataFetch2 = DataFetch.data;
-    allFaq.push(DataFetch2);
-  }
-}
-
-async function getDatas3() {
-  for (let i in Data7) {
-    let thisData = Data7[i].download_url;
-    //console.log(thisData)
-    const DataFetch = await axios.get(thisData);
-    const DataFetch2 = DataFetch.data;
-    allArticle.push(DataFetch2);
-  }
-}
-
-//console.log(allFaq);
-console.log(allArticle);
-console.log(allArticle[5]);
-
-  */
+      
       //DOM
       return (
         <Router>

@@ -102,36 +102,37 @@ export default function Catalogue(data) {
   /*DOM*/
   return (
     <div>
-
-    {  /*<div className="catalogue">
-            <div className="catalogueTitleWrap">
-              {(() => {
-                let thisProfile = CheckProfile();
-                let thisTitre;
-                if (thisProfile == "1") {
-                  let thisTitre = "étudiants";
-                  return (
-                    <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
-                  );
-                }
-                if (thisProfile == "2") {
-                  let thisTitre = "Enseignants";
-                  return (
-                    <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
-                  );
-                }
-                if (thisProfile == "3") {
-                  let thisTitre = "Personnels";
-                  return (
-                    <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
-                  );
-                }
-              })()}
-            </div>
-            <div className="catalogueWrap">
-              {data.data1.map((R, i) => checkProfilForCard(R, i))}
-            </div>
-          </div>*/}
+    
+      <div className="catalogue">
+        <div className="catalogueTitleWrap">
+          {(() => {
+            let thisProfile = CheckProfile();
+            let thisTitre;
+            if (thisProfile == "1") {
+              let thisTitre = "étudiants";
+              return (
+                <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
+              );
+            }
+            if (thisProfile == "2") {
+              let thisTitre = "Enseignants";
+              return (
+                <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
+              );
+            }
+            if (thisProfile == "3") {
+              let thisTitre = "Personnels";
+              return (
+                <h1 className="catalogueTitle">{"Espace" + " " + thisTitre}</h1>
+              );
+            }
+          })()}
+        </div>
+        {/*Dynamic card creation from Json file*/}
+        <div className="catalogueWrap">
+          {data.data1.map((R, i) => checkProfilForCard(R, i))}
+        </div>
+      </div>
     </div>
   );
 }
