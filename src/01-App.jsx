@@ -26,14 +26,29 @@ import Assistance from "./10-Assistance.jsx";
 
 /***DATAS***/
 //Get all categories
-import Data01 from "../public/services/Catalogue.json";
+let Data01 = "https://catnum.comu.unimes.fr/services/Catalogue.json";
 //Get all FAQ Questions in folder
-let Data02 = GetFaqQuestions();
+//let Data02 = GetFaqQuestions();
+
+let Data02 =
+  "https://catnum.comu.unimes.fr/services/faq/Emloi%20du%20temps.json";
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
+/*let allFilesNames = []
+
+for (let i in DataTest){
+//allFilesNames.push(DataTest[i].)
+}
+//console.log(DataTest)
+*/
+
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
-import Data05 from "../public/services/FAQCatalogue.json";
+//import Data05 from "../public/services/FAQCatalogue.json";
+let Data05 = "https://catnum.comu.unimes.fr/services/FAQCatalogue.json";
+//test import from catnum.comu
+let Data06 = "https://catnum.comu.unimes.fr/services/FAQCatalogue.json";
+//let Data06 = "https://catnum.comu.unimes.fr/services/articles/antivirus.json";
 
 /***APP***/
 export default function App() {
@@ -44,30 +59,51 @@ export default function App() {
   const [Data3, setData3] = useState({});
   const [Data4, setData4] = useState({});
   const [Data5, setData5] = useState({});
+  const [Data6, setData6] = useState({});
 
   //axios config
-  const request1 = axios.get(Data04);
+  const request1 = axios.get(Data01);
+  const request2 = axios.get(Data02);
+  //const request3 = axios.get(Data03);
+  const request4 = axios.get(Data04);
+  const request5 = axios.get(Data05);
+  const request6 = axios.get(Data06);
 
   //Get and store datas before rendering
   useEffect(() => {
     async function getDatas() {
-      axios.all([request1]).then(
-        axios.spread((...responses) => {
-          const responseOne = responses[0];
-          setData1(Data01);
-          setData2(Data02);
-          setData3(Data03);
-          setData4(responseOne.data);
-          setData5(Data05);
-          setLoading(false);
-        }),
-      );
+      axios
+        .all([request1, request2, /* request3*/ request4, request5, request6])
+        .then(
+          axios.spread((...responses) => {
+            const responseOne = responses[0];
+            const responseTwo = responses[1];
+            //const responseThree = responses[2];
+            const responseFour = responses[2];
+            const responseFive = responses[3];
+            const responseSix = responses[4];
+            setData1(responseOne.data);
+            //setData2(Data02);
+            setData2(responseTwo.data);
+            setData3(Data03);
+            setData4(responseFour.data);
+            setData5(responseFive.data);
+            setData6(responseSix.data);
+
+            setLoading(false);
+          }),
+        );
     }
     getDatas();
   }, []);
+  
+  console.log(Data1);
+  console.log(Data2);
+  console.log(Data3);
+  console.log(Data4);
+  console.log(Data5);
+  console.log(Data6);
 
-  //console.log(Data1);
-  //console.log(Data4);
 
   //Check if loading is complete before rendering
   if (Loading) {

@@ -19,7 +19,10 @@ export default function Footer(props) {
           if (IsEmpty(props.instable) && IsEmpty(props.ko)) {
             return (
               <div>
-                <a href="https://www-apps.unimes.fr/etat-des-services/">
+                <a
+                  href="https://www-apps.unimes.fr/etat-des-services/"
+                  target="_blank"
+                >
                   <img src="/img/ok.jpg" />
                   <p>{props.ok}</p>
                 </a>
@@ -28,7 +31,10 @@ export default function Footer(props) {
           } else {
             return (
               <div>
-                <a href="https://www-apps.unimes.fr/etat-des-services/">
+                <a
+                  href="https://www-apps.unimes.fr/etat-des-services/"
+                  target="_blank"
+                >
                   <img src="/img/ok.jpg" />
                   <p>{props.ok}</p>
                   <img src="/img/incertain.jpg" /> <p>{props.instable}</p>

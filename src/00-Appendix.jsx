@@ -83,6 +83,8 @@ export function GetJsonArticles() {
   return data;
 }
 
+
+
 //Get all FAQ questions from folder into Json array
 export function GetFaqQuestions() {
   const allFAQ = require.context("../public/services/faq", true);

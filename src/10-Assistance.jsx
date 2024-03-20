@@ -80,10 +80,32 @@ export default function Assistance(data) {
 
   //DOM
   return (
-    <div className="faqPage myPage">
+    <div className="faqPage catalogue">
+            <div className="catalogueTitleWrap">
+          {(() => {
+            let thisProfile = CheckProfile();
+            let thisTitre;
+            if (thisProfile == "1") {
+              let thisTitre = "étudiants";
+              return (
+                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
+              );
+            }
+            if (thisProfile == "2") {
+              let thisTitre = "Enseignants";
+              return (
+                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
+              );
+            }
+            if (thisProfile == "3") {
+              let thisTitre = "Personnels";
+              return (
+                <h1 className="catalogueTitle">{"Assistance" + " " + thisTitre}</h1>
+              );
+            }
+          })()}
+        </div>
       <div className="faqIntro">
-        {/*Dynamic Intro creation from Json file*/}
-        <h1>HelpCard title</h1>
         <p>
           Cet espace vous apporte les réponse aux problèmatiques les plus
           fréquemment rencontrées, dans le cas où vous ne trouveriez pas la
