@@ -23,35 +23,24 @@ export default function Assistance(data) {
   function checkOuterProblems(props, i) {
     //console.log(props);
     //Questions compatible with every profile & different from "0" (hidden Questions)
-    if (props.profil != "0" && IsEmpty(props.profil)) {
-      //      console.log(props + " " + "ok for every profile");
-
-      return (
-        //Displays problematic links
-        <a
-        className="problemCard"
-          key={props.texte + i}
-          href={CheckTag() + "/" + RegexThis(props.texte)}
-        >
-          <div key={i}>
-            <p key={i + props.texte}>{props.texte} </p>
-          </div>
-        </a>
-      );
-    } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
+    if (
+      (props.profil != "0" && IsEmpty(props.profil)) ||
+      (props.profil != "0" && props.profil.includes(CheckProfile()))
+    ) {
       //    console.log(props + " " + "ok for this profile");
 
       //Questions compatible with this profile & different from "0" (hidden Questions)
       return (
         <a
-        className="problemCard"
-        
+          className="problemCard"
           key={props.texte + i}
           href={CheckTag() + "/" + RegexThis(props.texte)}
         >
-        <div key={i}>
-          <p key={i + props.texte}>{props.texte} </p>
-        </div>
+          <i class="fa-solid fa-circle-question"></i>
+          <div key={i}>
+            <p key={i + props.texte}>{props.texte} </p>
+          </div><i class="fa-solid fa-circle-question"></i>
+          
         </a>
       );
     }
@@ -136,10 +125,11 @@ export default function Assistance(data) {
       <div className="faqIntro">
         <p>
           Cet espace vous apporte les réponse aux problèmatiques les plus
-          fréquemment rencontrées.<br/>
-          Dans le cas où vous ne trouveriez pas la
-          réponse à votre question, le service de demande d'assistance,
-          disponible en bas de page, est à votre disposition.
+          fréquemment rencontrées.
+          <br />
+          Dans le cas où vous ne trouveriez pas la réponse à votre question, le
+          service de demande d'assistance, disponible en bas de page, est à
+          votre disposition.
         </p>
       </div>
       <div className="problematicsWrapper">
