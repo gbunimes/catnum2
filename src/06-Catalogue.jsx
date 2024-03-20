@@ -5,7 +5,7 @@ import { RegexThis, CheckProfile, CheckTag, IsEmpty } from "./00-Appendix.jsx";
 
 /*PAGE*/
 export default function Catalogue(data) {
-  //console.log(data.data2)
+  //console.log(data)
   //Check cards profile
   function checkProfilForCard(props, i) {
     //Card compatible with every profile & different from "0" (hidden card)
@@ -19,7 +19,7 @@ export default function Catalogue(data) {
 
   //Displays Card since compatible with user profile
   function DisplayCard(props, i) {
-    //console.log(props)
+    ////console.log(props)
     let cardName = props.texte;
     //images link rewriting
     return (
@@ -38,7 +38,7 @@ export default function Catalogue(data) {
   }
 
   function checkProfilForCat(cardName, props, i) {
-    console.log(props)
+    //console.log(props);
     //props has 2 or 3 parent categories
     if (props.categorieParent.length <= 3) {
       // check every parent category inside array
@@ -102,7 +102,6 @@ export default function Catalogue(data) {
   /*DOM*/
   return (
     <div>
-    
       <div className="catalogue">
         <div className="catalogueTitleWrap">
           {(() => {
@@ -133,6 +132,7 @@ export default function Catalogue(data) {
           {data.data1.map((R, i) => checkProfilForCard(R, i))}
         </div>
       </div>
+      ;
     </div>
   );
 }
