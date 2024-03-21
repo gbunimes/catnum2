@@ -127,11 +127,11 @@ export default function Article(data) {
               key={innerProp + " " + "lien"}
               target="_blank"
               className="artLinkImg"
-              href={"/img/" + innerProp}
+              href={"/img/articles/" + innerProp}
             >
               <img
                 key={innerProp + "image"}
-                src={"/img/" + innerProp}
+                src={"/img/articles/" + innerProp}
                 alt={innerProp}
               />
             </a>
