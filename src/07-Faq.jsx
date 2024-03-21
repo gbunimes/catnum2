@@ -4,29 +4,50 @@
 import {
   CheckProfile,
   IsEmpty,
+  RegexThis,
   IsntEmpty,
   DisplayCollapse,
+  DisplayArticleSubLink,
   CheckProfileFaq,
 } from "./00-Appendix.jsx";
 import ReactPlayer from "react-player";
+import Helpcards from "./11-Helpcards.jsx";
 
 /*PAGE*/
 export default function Faq(data) {
-
-
+  ///Check Page matching
   let myFaqProfile = CheckProfileFaq(data.data2);
-  //console.log(data.data2);
-  console.log(myFaqProfile.texte);
+  //console.log(data.data3);
 
-  ///Check collapses profile
+  ///Check Page matching & collapses profile
+
   function checkOuterCollapses(props, i) {
-    //console.log(props);
-    //Questions compatible with every profile & different from "0" (hidden Questions)
-    if (props.profil != "0" && IsEmpty(props.profil)) {
-      return DisplayCollapse(props, i);
-    } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
-      //Questions compatible with this profile & different from "0" (hidden Questions)
-      return DisplayCollapse(props, i);
+    //If FAQ parents cat is there
+
+    if (IsntEmpty(props.FaqParents)) {
+      //If FAQ parents cat match current FAQ Cat
+      if (props.FaqParents.includes(myFaqProfile.id)) {
+        //Questions compatible with every profile & different from "0" (hidden Questions)
+        if (props.profil != "0" && IsEmpty(props.profil)) {
+          return (
+            <div key={"Faq" + i}>
+              {DisplayCollapse(props, i)}
+              {/*DisplayArticleSubLink(props,data.data3, i)*/}
+            </div>
+          );
+        } else if (
+          props.profil != "0" &&
+          props.profil.includes(CheckProfile())
+        ) {
+          //Questions compatible with this profile & different from "0" (hidden Questions)
+          return (
+            <div key={"Faq" + i}>
+              {DisplayCollapse(props, i)}
+              {/*DisplayArticleSubLink(props,data.data3, i)*/}
+            </div>
+          );
+        }
+      }
     }
   }
 
@@ -37,15 +58,10 @@ export default function Faq(data) {
         <div className="faqIntro">
           {/*Dynamic Intro creation from Json file*/}
           <h1>{myFaqProfile.texte}</h1>
-          {/*<p>
-                      Cet espace vous apporte les réponse aux questions les plus
-                      fréquemment posées, dans le cas où vous ne trouveriez pas la réponse
-                      à votre question, le service de demande d'assistance, disponible
-                      directement depuis le menu, est à votre disposition.
-                    </p>*/}
         </div>
         {/*Dynamic Collapsible creation from Json file*/}
         {data.data1.map((R, i) => checkOuterCollapses(R, i))}
+        <Helpcards data1={data.data4} />
       </div>
     </div>
   );

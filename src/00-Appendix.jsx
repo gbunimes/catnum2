@@ -43,37 +43,16 @@ export function CheckProfile() {
   }
 }
 
-
 //Check selected user profile
 export function CheckProfileFaq(props) {
-
-  console.log(window.location.href)
-  console.log(props)
-  for (let i in props){
-      if (window.location.href.includes(RegexThis(props[i].texte))) {
-console.log("match")
-return props[i];
+  /*console.log(window.location.href)
+  console.log(props)*/
+  for (let i in props) {
+    if (window.location.href.includes(RegexThis(props[i].texte))) {
+      /*console.log("match")*/
+      return props[i];
+    }
   }
-
-   // console.log(props[i].texte)
-
-/*
-  // etudiants
-  if (window.location.href.includes("etudiants")) {
-    let currentProfil = "1";
-    return currentProfil;
-  } else if (window.location.href.includes("enseignants")) {
-    // enseignants
-    let currentProfil = "2";
-    return currentProfil;
-  } else if (window.location.href.includes("personnels")) {
-    // personnels
-    let currentProfil = "3";
-    return currentProfil;
-  }
-*/
-
-}
 }
 
 //create Tag from selected user profile
@@ -123,11 +102,10 @@ export function GetFaqQuestions() {
   let data = allFaqList.filter((element, index) => {
     return allFaqList.indexOf(element) === index;
   });
-
   return data;
 }
 
-//Setting Articles Links according to Json pages in data/articles
+//Setting Articles Links; according to Json pages in data/articles
 export function GetArticlesLinks(props) {
   let myArray = [];
   for (let i in props) {
@@ -174,10 +152,29 @@ export function IsntEmpty(props) {
 //Displays Collapses since compatible with user profile
 export function DisplayCollapse(props, i) {
   return (
-    <Collapsible key={props.titre + i} trigger={props.titre}>
+    <Collapsible open="true" key={props.titre + i} trigger={props.titre}>
       {props.sousArticle.map((R, i) => checkInnerCollapses(R, i))}
     </Collapsible>
   );
+}
+
+//Displays correlated article link
+export function DisplayArticleSubLink(props, props2, i) {
+  /*
+  let theseOnes = [];
+  for (let i in props2) {
+    if (props2[i].titre.includes(props.titre)) {
+      return (
+        <div className="SubLinkinFAQ">
+        <i className="fa-solid fa-caret-right"></i>
+          <a target="_blank" href="">
+            {"Visiter la page" + " " + props2[i].titre}
+          </a>
+        </div>
+      );
+    }
+  }
+  */
 }
 
 //Check inner collapses profile

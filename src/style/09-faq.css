@@ -8,7 +8,8 @@
 	max-width: 70% !important;
 	width: 70%;
 	justify-content: flex-start;
-	align-items: center;
+	/*align-items: center;*/
+	align-items: flex-start;
 	flex-direction: column;
 	flex-wrap: wrap;
 }
@@ -21,11 +22,14 @@
 
 .linkImg img {
 	width: 100%;
-
 	height: auto;
 }
 
 /*Faq title*/
+.faqIntro {
+	width: 100%;
+}
+
 .faqIntro h1 {
 	text-align: center;
 	pointer-events: none;
@@ -175,3 +179,17 @@
 .CollLink:hover {
 	font-weight: bold;
 }
+/*
+.SubLinkinFAQ{
+	margin: 0 0 20px 50px;
+	align-self: flex-start;
+	animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		0.2s both;
+
+}
+.SubLinkinFAQ i{
+	margin-right: 10px;
+}
+.SubLinkinFAQ a{
+}
+*/

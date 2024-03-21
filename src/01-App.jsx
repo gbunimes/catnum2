@@ -129,7 +129,7 @@ export default function App() {
             <Route exact path="/etat-service.php"></Route>
             {/*ACCUEIL*/}
             <Route exact path="/accueil">
-              <Homepage />
+              <Homepage />;
             </Route>
             {/*CATALOGUE*/}
             <Route
@@ -146,26 +146,52 @@ export default function App() {
             </Route>
             {/*FAQ*/}
             {GetFAQLinks(Data5).map((item) => (
-              <Route key={"1-" + item} exact path={"/etudiants/" + item}>
+              <Route
+                key={"1-" + item}
+                exact
+                path={"/assistance-etudiants/" + item}
+              >
                 <Header data1={CheckProfile()} />
-                <Faq data1={Data2} data2={Data05} />
+                <Faq
+                  data1={Data2}
+                  data2={Data05}
+                  data3={Data3}
+                  data4={CheckProfile()}
+                />
 
                 <Footer data={Data4} />
               </Route>
             ))}
             {GetFAQLinks(Data5).map((item) => (
-              <Route key={"2-" + item} exact path={"/enseignants/" + item}>
+              <Route
+                key={"2-" + item}
+                exact
+                path={"/assistance-enseignants/" + item}
+              >
                 <Header data1={CheckProfile()} />
-                <Faq data1={Data2} data2={Data05} />
+                <Faq
+                  data1={Data2}
+                  data2={Data05}
+                  data3={Data3}
+                  data4={CheckProfile()}
+                />
 
                 <Footer data={Data4} />
               </Route>
             ))}
             {GetFAQLinks(Data5).map((item) => (
-              <Route key={"3-" + item} exact path={"/personnels/" + item}>
+              <Route
+                key={"3-" + item}
+                exact
+                path={"/assistance-personnels/" + item}
+              >
                 <Header data1={CheckProfile()} />
-                <Faq data1={Data2} data2={Data05} />
-
+                <Faq
+                  data1={Data2}
+                  data2={Data05}
+                  data3={Data3}
+                  data4={CheckProfile()}
+                />
                 <Footer data={Data4} />
               </Route>
             ))}

@@ -1,6 +1,7 @@
 {
   "profil": "",
   "titre": "",
+  "FaqParents": ["", "", "", "", ""],  
   "sousArticle": [
     {
       "profil": "",
