@@ -7,8 +7,8 @@ import { RegexThis, CheckProfile, IsEmpty, CheckTag } from "./00-Appendix.jsx";
 export default function HelpCards(data) {
   //console.log(data);
   let currentProfil = data.data1;
-  //DOM
 
+  //DOM
   function checkProfil() {
     if (currentProfil == 1) {
       return (
@@ -83,7 +83,8 @@ export default function HelpCards(data) {
           Contactez le
           <a href="https://demat.unimes.fr/snap" target="_blank">
             Service Numérique & d'Accompagnement Pédagogique
-          </a>          .
+          </a>{" "}
+          .
         </p>
         <p>Téléphone: 0466364628.</p>
         <p>Horaires: 8h00-17h30 les jours ouvrés.</p>

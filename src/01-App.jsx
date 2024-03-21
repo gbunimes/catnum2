@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
 import {
   RegexThis,
+  RegexThis3,
   CheckProfile,
   GetFAQLinks,
   GetJsonArticles,
@@ -37,12 +38,14 @@ let Data02 = GetFaqQuestions();
 
 //Get all Json pages in folder
 let Data03 = GetJsonArticles();
-
-/*let allFilesNames = []
-for (let i in DataTest){
-//allFilesNames.push(DataTest[i].)
+/*
+//console.log(Data03)
+let allFilesNames = []
+for (let i in Data03){
+  let thisTitle = 
+allFilesNames.push(RegexThis3(Data03[i].titre))
 }
-//console.log(DataTest)
+console.log(allFilesNames)
 */
 
 //Get services availability

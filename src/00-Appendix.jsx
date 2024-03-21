@@ -26,6 +26,11 @@ export function RegexThis2(props) {
   return toModify2;
 }
 
+export function RegexThis3(props) {
+  let toModify1 = props.replace(new RegExp(/[" "]/g), "%20");
+  return toModify1;
+}
+
 //Check selected user profile
 export function CheckProfile() {
   // etudiants
