@@ -43,7 +43,6 @@ footer a {
   height: fit-content;
   display: flex;
   align-items: center;
-  /* justify-content: space-between;*/
   justify-content: center;
 }
 
@@ -63,8 +62,6 @@ footer a i {
   height: 100%;
   padding-top: 10px;
   font-size: 25px;
-
-  /*mix-blend-mode: multiply;*/
 }
 
 .fa-circle-check {

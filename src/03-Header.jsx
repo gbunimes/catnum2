@@ -12,32 +12,7 @@ import {
 export default function Header(data) {
   //user profile
   let currentProfil = data.data1;
-  //Check user profile and set sublist links accordingly
 
-  function checkProfil() {
-    if (currentProfil == 1) {
-      return (
-        <a
-          href="https://services-numeriques.unimes.fr/files/2022/07/charte-pedago-etudiant.pdf"
-          target="_blank"
-        >
-          Charte d'utilisation
-        </a>
-      );
-    } else if (
-      (currentProfil != 1 && currentProfil == 2) ||
-      currentProfil == 3
-    ) {
-      return (
-        <a
-          href="https://services-numeriques.unimes.fr/files/2022/07/charte-personnel-applicable.pdf"
-          target="_blank"
-        >
-          Charte d'utilisation
-        </a>
-      );
-    }
-  }
   //Check user profile and set "catalogue" nav link accordingly
   function checkCatLink() {
     if (currentProfil == 1) {
@@ -52,7 +27,7 @@ export default function Header(data) {
   }
 
   //Check user profile and set "FAQ" nav link accordingly
-  function checkFaqLink() {
+  function checkAssistLink() {
     if (currentProfil == 1) {
       return "/assistance-etudiants";
     } else if (currentProfil == 2) {
@@ -61,7 +36,6 @@ export default function Header(data) {
       return "/assistance-personnels";
     } else {
       return "/accueil";
-      
     }
   }
 
@@ -78,7 +52,6 @@ export default function Header(data) {
       if (currentProfil == 1) {
         let myProfile = "/recherche-etudiants";
         let text = text0.split(delimiter);
-
         window.location.href = myProfile + "?" + "votre-recherche=" + text;
       } else if (currentProfil == 2) {
         let myProfile = "/recherche-enseignants";
@@ -135,28 +108,10 @@ export default function Header(data) {
             <li className="list list1">
               <a href={checkCatLink()}>Catalogue</a>
             </li>
-            {/*3 - FAQ */}
+            {/*3 - Assistance */}
             <li>
-              <a href={checkFaqLink()}>Assistance</a>
+              <a href={checkAssistLink()}>Assistance</a>
             </li>
-            {/*4 - Assistance */}
-
-            {/*<li className="list list2 list3">
-                          Assistance
-                          <ul className="subList subList2">
-                            <li>
-                              <a href="https://wiki.unimes.fr/doku.php" target="_blank">
-                                documentation
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://demat.unimes.fr/" target="_blank">
-                                Demande d'assistance
-                              </a>
-                            </li>
-                            <li>{checkProfil()}</li>
-                          </ul>
-                        </li>*/}
           </ul>
         </div>
         {/*5 - Search */}

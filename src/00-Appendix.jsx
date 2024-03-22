@@ -44,8 +44,6 @@ export function CheckProfile() {
 
 //Check selected user profile
 export function CheckProfileFaq(props) {
-  /*console.log(window.location.href)
-  console.log(props)*/
   for (let i in props) {
     if (window.location.href.includes(RegexThis(props[i].texte))) {
       /*console.log("match")*/
@@ -72,10 +70,8 @@ export function CheckTag() {
 }
 
 //Get all Json pages from folder into Json array
-
 export function GetJsonArticles() {
   const allPages = require.context("../public/services/articles", true);
-
   const allPagesList = allPages.keys().map((page) => allPages(page));
   let data = allPagesList.filter((element, index) => {
     return allPagesList.indexOf(element) === index;
@@ -155,25 +151,6 @@ export function DisplayCollapse(props, i) {
       {props.sousArticle.map((R, i) => checkInnerCollapses(R, i))}
     </Collapsible>
   );
-}
-
-//Displays correlated article link
-export function DisplayArticleSubLink(props, props2, i) {
-  /*
-  let theseOnes = [];
-  for (let i in props2) {
-    if (props2[i].titre.includes(props.titre)) {
-      return (
-        <div className="SubLinkinFAQ">
-        <i className="fa-solid fa-caret-right"></i>
-          <a target="_blank" href="">
-            {"Visiter la page" + " " + props2[i].titre}
-          </a>
-        </div>
-      );
-    }
-  }
-  */
 }
 
 //Check inner collapses profile
@@ -261,9 +238,9 @@ function DisplayContent(props, i) {
               className="linkImg"
               key={props.image + " " + "lien"}
               target="_blank"
-              href={"/img/" + props.image}
+              href={"/img/faq/" + props.image}
             >
-              <img src={"/img/" + props.image} alt={props.image} />
+              <img src={"/img/faq/" + props.image} alt={props.image} />
             </a>
           );
         }

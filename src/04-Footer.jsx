@@ -6,16 +6,14 @@ import { IsntEmpty, IsEmpty } from "./00-Appendix.jsx";
 
 /***COMPONENT***/
 export default function Footer(props) {
-  //  console.log(props.data);
-
-  //Check cards profile
+  //Check Services statuses
   function checkStatuses(props, i) {
     return (
       <div className="innerOuter">
-        {/*<p className="numStateTitle">État des services numériques</p>*/}
         <p className="numStateTitle">État des services</p>
 
         {(() => {
+          //If nothing is wrong
           if (IsEmpty(props.instable) && IsEmpty(props.ko)) {
             return (
               <div>
@@ -25,11 +23,12 @@ export default function Footer(props) {
                 >
                   <i className="fa-regular fa-circle-check "></i>
                   <p className="onlyFa">{props.ok}</p>
-
                 </a>
               </div>
             );
-          } else {
+          }
+          //If a service is down or troubled
+          else {
             return (
               <div>
                 <a
@@ -66,6 +65,7 @@ export default function Footer(props) {
                         indisponibles (rouge)."
       data-tooltip-place="top"
     >
+      {/*Check Statuses*/}
       {checkStatuses(props.data)}
       <Tooltip id="serviceReview" classNameArrow="myArrow" />
     </footer>

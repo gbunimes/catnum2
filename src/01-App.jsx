@@ -34,6 +34,7 @@ let Data02 = GetFaqQuestions();
 let Data03 = GetJsonArticles();
 //Get services availability
 let Data04 = "https://www-apps.unimes.fr/etat-des-services/etat-service.php";
+//Get all FAQ categories
 import Data05 from "../public/services/FAQCatalogue.json";
 
 /***APP***/
@@ -98,6 +99,19 @@ export default function App() {
               <Catalogue data1={Data1} data2={Data3} />
               <Footer data={Data4} />
             </Route>
+            {/*ASSISTANCE*/}
+            <Route
+              exact
+              path={[
+                "/assistance-etudiants",
+                "/assistance-enseignants-chercheurs",
+                "/assistance-personnels",
+              ]}
+            >
+              <Header data1={CheckProfile()} />
+              <Assistance data1={CheckProfile()} data2={Data5} data3={Data2} />
+              <Footer data={Data4} />
+            </Route>
             {/*FAQ*/}
             {GetFAQLinks(Data5).map((item) => (
               <Route
@@ -149,21 +163,6 @@ export default function App() {
                 <Footer data={Data4} />
               </Route>
             ))}
-
-            {/*ASSISTANCE*/}
-            <Route
-              exact
-              path={[
-                "/assistance-etudiants",
-                "/assistance-enseignants-chercheurs",
-                "/assistance-personnels",
-              ]}
-            >
-              <Header data1={CheckProfile()} />
-              <Assistance data1={CheckProfile()} data2={Data5} data3={Data2} />
-              <Footer data={Data4} />
-            </Route>
-
             {/*SEARCH*/}
             <Route
               exact

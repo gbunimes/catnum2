@@ -17,35 +17,22 @@ import Helpcards from "./11-Helpcards.jsx";
 export default function Faq(data) {
   ///Check Page matching
   let myFaqProfile = CheckProfileFaq(data.data2);
-  //console.log(data.data3);
 
   ///Check Page matching & collapses profile
-
   function checkOuterCollapses(props, i) {
     //If FAQ parents cat is there
-
     if (IsntEmpty(props.FaqParents)) {
       //If FAQ parents cat match current FAQ Cat
       if (props.FaqParents.includes(myFaqProfile.id)) {
         //Questions compatible with every profile & different from "0" (hidden Questions)
         if (props.profil != "0" && IsEmpty(props.profil)) {
-          return (
-            <div key={"Faq" + i}>
-              {DisplayCollapse(props, i)}
-              {/*DisplayArticleSubLink(props,data.data3, i)*/}
-            </div>
-          );
+          return <div key={"Faq" + i}>{DisplayCollapse(props, i)}</div>;
         } else if (
           props.profil != "0" &&
           props.profil.includes(CheckProfile())
         ) {
           //Questions compatible with this profile & different from "0" (hidden Questions)
-          return (
-            <div key={"Faq" + i}>
-              {DisplayCollapse(props, i)}
-              {/*DisplayArticleSubLink(props,data.data3, i)*/}
-            </div>
-          );
+          return <div key={"Faq" + i}>{DisplayCollapse(props, i)}</div>;
         }
       }
     }

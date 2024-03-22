@@ -24,7 +24,6 @@ export default function Search(data) {
     if (IsntEmpty(props.motCles)) {
       for (let i in props.motCles) {
         let thisKeyWord = RegexThis(props.motCles[i]);
-
         if (thisKeyWord.includes(searchOne) && IsntEmpty(thisKeyWord)) {
           if (
             (IsntEmpty(props.profil) &&

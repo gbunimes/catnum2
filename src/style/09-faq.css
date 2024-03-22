@@ -179,17 +179,3 @@
 .CollLink:hover {
 	font-weight: bold;
 }
-/*
-.SubLinkinFAQ{
-	margin: 0 0 20px 50px;
-	align-self: flex-start;
-	animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-		0.2s both;
-
-}
-.SubLinkinFAQ i{
-	margin-right: 10px;
-}
-.SubLinkinFAQ a{
-}
-*/

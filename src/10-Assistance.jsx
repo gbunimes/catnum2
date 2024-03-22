@@ -4,11 +4,9 @@ import { RegexThis, CheckProfile, IsEmpty, CheckTag } from "./00-Appendix.jsx";
 import Helpcards from "./11-Helpcards.jsx";
 
 /***COMPONENT***/
-
 export default function Assistance(data) {
   let currentProfil = data.data1;
-  //console.log(currentProfil);
-  ///Check problematic profile
+
   function checkOuterProblems(props, i) {
     //Questions compatible with every profile & different from "0" (hidden Questions)
     if (
