@@ -1,7 +1,7 @@
 {
   "name": "Services Numériques Unîmes",
   "version": "1.1.0",
-  "homepage":"https://catnum.comu.unimes.fr/",
+  "homepage": "https://catnum.comu.unimes.fr/",
   "author": "Gillian Brousse (SNAP) / DSIUN Unîmes",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
     "react-responsive-modal": "^6.2.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^5.0.1",
-    "react-tooltip": "^5.13.0"
+    "react-tooltip": "^5.26.3"
   },
   "scripts": {
     "start": "react-app-rewired start",

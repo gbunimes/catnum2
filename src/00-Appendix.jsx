@@ -167,7 +167,7 @@ export function checkInnerCollapses(props, i) {
 //Displays inner collapses since compatible with user profile
 function DisplayCollapse2(props, i) {
   return (
-    <Collapsible key={props.titre + i} trigger={props.titre}>
+    <Collapsible open="true" key={props.titre + i} trigger={props.titre}>
       {props.contenu.map((R, i) => checkContent(R, i))}
     </Collapsible>
   );
