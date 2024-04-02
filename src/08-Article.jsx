@@ -220,15 +220,17 @@ export default function Article(data) {
     if (RegexThis(R.titre).includes(RegexThis(props))) {
       return (
         <div key="artCollapsibles" className="artCollapsibles">
-          <Collapsible
-            open="true"
-            key={R.titre + i}
-            id={R.titre + i}
-            trigger={R.titre + " : " + "questions fréquentes"}
-          >
-            {/*check every second level question in FAQ*/}
-            {R.sousArticle.map((R, i) => checkInnerCollapses(R, i))}
-          </Collapsible>
+          <details className="Collapsible" key={R.titre + i} id={R.titre + i}>
+            <summary className="Collapsible__trigger">
+              {R.titre + " : " + "questions fréquentes"}
+            </summary>
+            <div className="Collapsible__contentOuter">
+              <div className="Collapsible__contentInner">
+                {/*check every second level question in FAQ*/}
+                {R.sousArticle.map((R, i) => checkInnerCollapses(R, i))}
+              </div>
+            </div>
+          </details>
         </div>
       );
     }
