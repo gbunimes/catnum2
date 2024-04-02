@@ -10,9 +10,61 @@ import {
 } from "./00-Appendix.jsx";
 import Collapsible from "react-collapsible";
 import ReactPlayer from "react-player";
+import { useState, useEffect } from "react";
 
 /*PAGE*/
 export default function Article(data) {
+  useEffect(() => {
+    function checkCollapses1() {
+      //Outer Collapses
+      const All_Details = document.querySelectorAll("details");
+      //console.log(All_Details);
+
+      All_Details.forEach((deet) => {
+        if (deet.className.includes("CollapsibleOne")) {
+          deet.addEventListener("toggle", toggleOpenOneOnly);
+        }
+      });
+
+      function toggleOpenOneOnly(e) {
+        if (this.open) {
+          All_Details.forEach((deet) => {
+            if (deet.className.includes("CollapsibleOne")) {
+              if (deet != this && deet.open) deet.open = false;
+            }
+          });
+        }
+      }
+    }
+
+    function checkCollapses2() {
+      //Inner Collapses
+
+      const All_Details = document.querySelectorAll("details");
+      //      console.log(All_Details);
+
+      All_Details.forEach((deet) => {
+        if (deet.className.includes("CollapsibleTwo")) {
+          deet.addEventListener("toggle", toggleOpenOneOnly);
+        }
+      });
+
+      function toggleOpenOneOnly(e) {
+        if (this.open) {
+          All_Details.forEach((deet) => {
+            if (deet.className.includes("CollapsibleTwo")) {
+              if (deet != this && deet.open) deet.open = false;
+            }
+          });
+        }
+      }
+    }
+
+    //
+    checkCollapses1();
+    checkCollapses2();
+  }, []);
+
   ///Check Page matching
   function checkArticle(props, i) {
     let thisPage = window.location.href;
@@ -220,7 +272,11 @@ export default function Article(data) {
     if (RegexThis(R.titre).includes(RegexThis(props))) {
       return (
         <div key="artCollapsibles" className="artCollapsibles">
-          <details className="Collapsible" key={R.titre + i} id={R.titre + i}>
+          <details
+            className="Collapsible CollapsibleOne"
+            key={R.titre + i}
+            id={R.titre + i}
+          >
             <summary className="Collapsible__trigger">
               {R.titre + " : " + "questions fréquentes"}
             </summary>

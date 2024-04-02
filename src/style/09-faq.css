@@ -7,8 +7,7 @@
 	min-width: unset !important;
 	max-width: 70% !important;
 	width: 70%;
-	justify-content: flex-start;
-	/*align-items: center;*/
+	justify-content: flex-start;	
 	align-items: flex-start;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -90,8 +89,8 @@ summary::-webkit-details-marker {
 	font-size: 24px;
 	font-family: "Oswald", sans-serif;
 	border-radius: 7px;
-	font-weight: 400;
-	width: fit-content;
+	font-weight: 400;	
+	width: fit-content!important;
 	/*	width: 50% !important;*/
 	max-width: 80%;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);

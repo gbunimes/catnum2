@@ -147,7 +147,7 @@ export function IsntEmpty(props) {
 //Displays Collapses since compatible with user profile
 export function DisplayCollapse(props, i) {
   return (
-    <details className="Collapsible" key={props.titre + i}>
+    <details className="Collapsible CollapsibleOne" key={props.titre + i}>
       <summary className="Collapsible__trigger">{props.titre}</summary>
       <div className="Collapsible__contentOuter">
         <div className="Collapsible__contentInner">
@@ -172,7 +172,7 @@ export function checkInnerCollapses(props, i) {
 //Displays inner collapses since compatible with user profile
 function DisplayCollapse2(props, i) {
   return (
-    <details className="Collapsible" key={props.titre + i}>
+    <details className="Collapsible CollapsibleTwo" key={props.titre + i}>
       <summary className="Collapsible__trigger">{props.titre}</summary>
       <div className="Collapsible__contentOuter">
         <div className="Collapsible__contentInner">
