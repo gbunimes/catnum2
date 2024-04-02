@@ -147,7 +147,12 @@ export function IsntEmpty(props) {
 //Displays Collapses since compatible with user profile
 export function DisplayCollapse(props, i) {
   return (
-    <Collapsible open="true" key={props.titre + i} trigger={props.titre}>
+    <Collapsible
+      lazyRender="true"
+      open="true"
+      key={props.titre + i}
+      trigger={props.titre}
+    >
       {props.sousArticle.map((R, i) => checkInnerCollapses(R, i))}
     </Collapsible>
   );

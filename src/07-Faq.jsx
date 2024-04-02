@@ -13,6 +13,10 @@ import {
 import ReactPlayer from "react-player";
 import Helpcards from "./11-Helpcards.jsx";
 
+//new collapses
+
+//
+
 /*PAGE*/
 export default function Faq(data) {
   ///Check Page matching
@@ -48,6 +52,89 @@ export default function Faq(data) {
         </div>
         {/*Dynamic Collapsible creation from Json file*/}
         {data.data1.map((R, i) => checkOuterCollapses(R, i))}
+        <div className="collapseWrap">
+          <details className="Collapsible">
+            <summary className="Collapsible__trigger">
+              How do you create an accordion A?
+            </summary>
+            <div className="Collapsible__contentOuter">
+              <div className="Collapsible__contentInner">
+                <details className="Collapsible">
+                  <summary className="Collapsible__trigger">
+                    How do you create an accordion 0?
+                  </summary>
+                  <div className="Collapsible__contentOuter">
+                    <div className="Collapsible__contentInner">
+                      <div className="faqTextBlock">
+                        <p>
+                          Easy! As long as you don't have to support IE11 or
+                          older
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+
+          <details className="Collapsible">
+            <summary className="Collapsible__trigger">
+              How do you create an accordion B?
+            </summary>
+            <div className="Collapsible__contentOuter">
+              <div className="Collapsible__contentInner">
+                <details className="Collapsible">
+                  <summary className="Collapsible__trigger">
+                    How do you create an accordion 1 ?
+                  </summary>
+                  <div className="Collapsible__contentOuter">
+                    <div className="Collapsible__contentInner">
+                      <div className="faqTextBlock">
+                        <p>
+                          Easy! As long as you don't have to support IE11 or
+                          older
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details className="Collapsible">
+                  <summary className="Collapsible__trigger">
+                    How do you create an accordion 2?
+                  </summary>
+                  <div className="Collapsible__contentOuter">
+                    <div className="Collapsible__contentInner">
+                      <div className="faqTextBlock">
+                        <p>
+                          Easy! As long as you don't have to support IE11 or
+                          older
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details className="Collapsible">
+                  <summary className="Collapsible__trigger">
+                    How do you create an accordion 3?
+                  </summary>
+                  <div className="Collapsible__contentOuter">
+                    <div className="Collapsible__contentInner">
+                      <div className="faqTextBlock">
+                        <p>
+                          Easy! As long as you don't have to support IE11 or
+                          older
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+        </div>
         <Helpcards data1={data.data4} />
       </div>
     </div>

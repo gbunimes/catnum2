@@ -61,17 +61,14 @@
 
 /*Collapsible generalities*/
 
-summary {
-	list-style: none;
-}
 
-summary::-webkit-details-marker {
-	display: none;
-}
 
-.collapseWrap {
-	width: 100%;
-}
+/**/
+
+
+
+/**/
+
 
 .Collapsible {
 	padding: 25px;
@@ -92,8 +89,7 @@ summary::-webkit-details-marker {
 	border-radius: 7px;
 	font-weight: 400;
 	width: fit-content;
-/*	width: 50% !important;*/
-max-width: 80%;
+	width: 50% !important;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 }
