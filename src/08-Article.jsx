@@ -221,6 +221,7 @@ export default function Article(data) {
       return (
         <div key="artCollapsibles" className="artCollapsibles">
           <Collapsible
+            open="true"
             key={R.titre + i}
             id={R.titre + i}
             trigger={R.titre + " : " + "questions fréquentes"}
