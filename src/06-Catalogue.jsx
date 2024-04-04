@@ -130,7 +130,6 @@ export default function Catalogue(data) {
           {data.data1.map((R, i) => checkProfilForCard(R, i))}
         </div>
       </div>
-      ;
     </div>
   );
 }
