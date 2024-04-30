@@ -14,6 +14,8 @@ import { useState, useEffect } from "react";
 
 /*PAGE*/
 export default function Article(data) {
+
+/*
   useEffect(() => {
     function checkCollapses1() {
       //Outer Collapses
@@ -64,6 +66,9 @@ export default function Article(data) {
     checkCollapses1();
     checkCollapses2();
   }, []);
+
+
+  */
 
   ///Check Page matching
   function checkArticle(props, i) {
@@ -274,6 +279,7 @@ export default function Article(data) {
         <div key="artCollapsibles" className="artCollapsibles">
           <details
             className="Collapsible CollapsibleOne"
+            open={true}
             key={R.titre + i}
             id={R.titre + i}
           >
