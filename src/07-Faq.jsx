@@ -16,6 +16,7 @@ import Helpcards from "./11-Helpcards.jsx";
 
 /*PAGE*/
 export default function Faq(data) {
+/*
   useEffect(() => {
     function checkCollapses1() {
       //Outer Collapses
@@ -66,7 +67,7 @@ export default function Faq(data) {
     checkCollapses1();
     checkCollapses2();
   }, []);
-
+*/
   ///Check Page matching
   let myFaqProfile = CheckProfileFaq(data.data2);
 

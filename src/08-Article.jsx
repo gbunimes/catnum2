@@ -38,7 +38,6 @@ export default function Article(data) {
         }
       }
     }
-
     function checkCollapses2() {
       //Inner Collapses
 
@@ -61,14 +60,12 @@ export default function Article(data) {
         }
       }
     }
-
     //
     checkCollapses1();
     checkCollapses2();
   }, []);
-
-
   */
+  
 
   ///Check Page matching
   function checkArticle(props, i) {
