@@ -16,8 +16,17 @@
       {
         "paragraphe": "L’université de Nîmes met à votre disposition une plateforme de cours en ligne, e-campus."
       },
+
       {
-        "image": "logo-e-campus.png"
+        "multiImg": [
+          "ecampus2.png",
+
+          "logo-e-campus.png",
+          "ecampus2.png",
+          "logo-e-campus.png",
+          "logo-e-campus.png",
+          "logo-e-campus.png"
+        ]
       },
 
       {
@@ -58,9 +67,8 @@
       {
         "image": "ecampus2.png"
       }
-      
     ],
-   [
+    [
       {
         "profil": "2-3"
       },
@@ -131,8 +139,8 @@
         }
       }
     ],
-     [
-       {
+    [
+      {
         "profil": "2-3"
       },
       {
@@ -233,6 +241,5 @@
         }
       }
     ]
-
   ]
 }

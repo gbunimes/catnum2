@@ -129,6 +129,28 @@
 
 /**********602*********/
 @media (max-width: 602px) {
+
+/****************************/
+
+.inlineImgsFAQ, .inlineImgs{
+	flex-direction: column;
+}
+
+.inlineImgsFAQ a, .inlineImgs a{
+	margin: 10px auto;
+}
+
+
+.inlineImgsFAQ img, .inlineImgs img{
+	max-width: 100%!important;
+}
+
+.articleSection .artLinkImg{
+	max-width: 90%;
+}
+
+/**********************************/
+
 		.problematicsWrapper .problemCard{
 			width: 80%;
 	margin: 25px 10px;

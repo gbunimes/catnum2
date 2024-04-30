@@ -81,6 +81,8 @@
 	height: auto !important;
 	border-radius: 7px;
 	margin: 25px auto;
+	display: flex;
+	justify-content: center;
 
 	padding: 10px;
 	max-width: 50%;
@@ -88,7 +90,28 @@
 }
 
 .articleSection .artLinkImg img {
-	max-width: 100%;
+	max-width: 90%;
+	margin: auto;
+}
+
+.inlineImgs {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 20px auto;
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
+	border-radius: 7px;
+}
+
+.inlineImgs .artLinkImg {
+	box-shadow: unset !important;
+}
+
+.inlineImgs img {
+	flex: 1;
+	margin: auto;
+	max-width: 40%;
+	box-shadow: unset !important;
 }
 
 .articleSection p {

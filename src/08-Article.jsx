@@ -7,6 +7,7 @@ import {
   IsEmpty,
   IsntEmpty,
   CheckProfile,
+  inlineImages,
 } from "./00-Appendix.jsx";
 import Collapsible from "react-collapsible";
 import ReactPlayer from "react-player";
@@ -14,8 +15,7 @@ import { useState, useEffect } from "react";
 
 /*PAGE*/
 export default function Article(data) {
-
-/*
+  /*
   useEffect(() => {
     function checkCollapses1() {
       //Outer Collapses
@@ -65,7 +65,6 @@ export default function Article(data) {
     checkCollapses2();
   }, []);
   */
-  
 
   ///Check Page matching
   function checkArticle(props, i) {
@@ -190,7 +189,27 @@ export default function Article(data) {
               />
             </a>
           );
-        } else if (typeOfProp.includes("lien")) {
+        }
+
+
+          /********************************************************************************/
+
+        else if (typeOfProp.includes("multiImg")) {
+
+          //console.log(innerProp[0]);
+          let thisInnerP = innerProp[0];
+          console.log(thisInnerP);
+          return (
+            <span className="inlineImgs">
+              {innerProp[0].map((R, i) => inlineImages(R, i))}
+            </span>
+          );
+        }
+
+
+          /********************************************************************************/
+
+        else if (typeOfProp.includes("lien")) {
           //If content is a link
           if (IsntEmpty(innerProp[0].url) && !innerProp[0].url.includes("@")) {
             return (

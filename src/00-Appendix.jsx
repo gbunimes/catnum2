@@ -147,8 +147,11 @@ export function IsntEmpty(props) {
 //Displays Collapses since compatible with user profile
 export function DisplayCollapse(props, i) {
   return (
-    <details className="Collapsible CollapsibleOne" key={props.titre + i}
-    open={true}>
+    <details
+      className="Collapsible CollapsibleOne"
+      key={props.titre + i}
+      open={true}
+    >
       <summary className="Collapsible__trigger">{props.titre}</summary>
       <div className="Collapsible__contentOuter">
         <div className="Collapsible__contentInner">
@@ -173,8 +176,10 @@ export function checkInnerCollapses(props, i) {
 //Displays inner collapses since compatible with user profile
 function DisplayCollapse2(props, i) {
   return (
-    <details className="Collapsible CollapsibleTwo" key={props.titre + i}
-open={true}
+    <details
+      className="Collapsible CollapsibleTwo"
+      key={props.titre + i}
+      open={true}
     >
       <summary className="Collapsible__trigger">{props.titre}</summary>
       <div className="Collapsible__contentOuter">
@@ -207,42 +212,36 @@ function DisplayContent(props, i) {
           return <h2>{props.titre}</h2>;
         }
       })()}
-
       {(() => {
         //Check and display paragraph if needed
         if (IsntEmpty(props.paragraphe)) {
           return <p>{props.paragraphe}</p>;
         }
       })()}
-
       {(() => {
         //Check and display bold  paragraph if needed
         if (IsntEmpty(props.gras)) {
           return <p className="fatP">{props.gras}</p>;
         }
       })()}
-
       {(() => {
         //Check and display italic paragraph if needed
         if (IsntEmpty(props.italique)) {
           return <p className="itaP">{props.italique}</p>;
         }
       })()}
-
       {(() => {
         //Check and display underlined paragraph if needed
         if (IsntEmpty(props.souligne)) {
           return <p className="underlinedP">{props.souligne}</p>;
         }
       })()}
-
       {(() => {
         //Check and display quote/alert paragraph if needed
         if (IsntEmpty(props.quote)) {
           return <p className="quoteP">{props.quote}</p>;
         }
       })()}
-
       {(() => {
         //Check and display image if needed
         if (IsntEmpty(props.image)) {
@@ -255,6 +254,19 @@ function DisplayContent(props, i) {
             >
               <img src={"/img/faq/" + props.image} alt={props.image} />
             </a>
+          );
+        }
+      })()}
+
+      {(() => {
+        //Check and display dble images if needed
+
+        if (IsntEmpty(props.multiImg)) {
+          console.log(props.multiImg);
+          return (
+            <span className="inlineImgsFAQ">
+              {props.multiImg.map((R, i) => inlineImagesFAQ(R, i))}
+            </span>
           );
         }
       })()}
@@ -312,7 +324,6 @@ function DisplayContent(props, i) {
           }
         }
       })()}
-
       {(() => {
         //Check and display link if needed
         if (IsntEmpty(props.lien)) {
@@ -345,7 +356,6 @@ function DisplayContent(props, i) {
           }
         }
       })()}
-
       {(() => {
         //Check and display local document if needed
         if (IsntEmpty(props.lienDoc)) {
@@ -364,5 +374,33 @@ function DisplayContent(props, i) {
         }
       })()}
     </div>
+  );
+}
+
+/*display inline images*/
+export function inlineImages(R, i) {
+  return (
+    <a
+      key={R + " " + "lien"}
+      target="_blank"
+      className="artLinkImg"
+      href={"/img/articles/" + R}
+    >
+      <img key={R + "image"} src={"/img/articles/" + R} alt={R} />
+    </a>
+  );
+}
+
+/*display inline images in FAQ*/
+export function inlineImagesFAQ(R, i) {
+  return (
+    <a
+      key={R + " " + "lien"}
+      target="_blank"
+      className="linkImg linkImg2"
+      href={"/img/faq/" + R}
+    >
+      <img key={R + "image"} src={"/img/faq/" + R} alt={R} />
+    </a>
   );
 }
