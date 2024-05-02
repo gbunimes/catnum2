@@ -198,7 +198,7 @@ export default function Article(data) {
 
           //console.log(innerProp[0]);
           let thisInnerP = innerProp[0];
-          console.log(thisInnerP);
+          //console.log(thisInnerP);
           return (
             <span className="inlineImgs">
               {innerProp[0].map((R, i) => inlineImages(R, i))}
