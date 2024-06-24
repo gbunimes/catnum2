@@ -8,7 +8,6 @@ import {
   RegexThis,
   IsntEmpty,
   DisplayCollapse,
-  DisplayCollapse3,
   DisplayArticleSubLink,
   CheckProfileFaq,
 } from "./00-Appendix.jsx";
@@ -82,7 +81,7 @@ export default function Faq(data) {
         if (props.profil != "0" && IsEmpty(props.profil)) {
           return (
             <div className="collapseWrap" key={"Faq" + i}>
-              {DisplayCollapse3(props,myFaqProfile, i)}
+              {DisplayCollapse(props, i)}
             </div>
           );
         } else if (
@@ -92,7 +91,7 @@ export default function Faq(data) {
           //Questions compatible with this profile & different from "0" (hidden Questions)
           return (
             <div className="collapseWrap" key={"Faq" + i}>
-              {DisplayCollapse3(props,myFaqProfile, i)}
+              {DisplayCollapse(props, i)}
             </div>
           );
         }

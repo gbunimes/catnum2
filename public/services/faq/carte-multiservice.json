@@ -6,13 +6,14 @@
   "sousArticle": [
     {
       "profil": "",
-
       "titre": "Comment obtenir une carte multiservice ?",
       "contenu": [
         {
           "profil": "2-3",
           "titre": "Carte « Professionnelle »",
           "paragraphe": "Les personnels en font la demande depuis la page d’accueil de l’ENT (Tuile SGC – Système de gestion des cartes). Elle est ensuite traitée par la scolarité, en charge d’associer un numéro de carte à chaque personnel avant de la lui transmettre par courrier."
+
+      
         },
         {
           "profil": "1",
@@ -23,8 +24,7 @@
     },
     {
       "profil": "",
-      "FaqParents": ["", "07", "", "", ""],
-
+            "FaqParents": ["07", "", "", ""],
       "titre": "J'ai perdu ma carte multiservice : que faire ?",
       "contenu": [
         {

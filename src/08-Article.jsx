@@ -290,7 +290,6 @@ export default function Article(data) {
   // display first level questions
   function checkFAQ2(R, props, i) {
     // Check if question in related to article title
-    console.log(R)
     if (RegexThis(R.titre).includes(RegexThis(props))) {
       return (
         <div key="artCollapsibles" className="artCollapsibles">
