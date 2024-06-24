@@ -162,6 +162,24 @@ export function DisplayCollapse(props, i) {
   );
 }
 
+export function DisplayCollapse3(props,props2, i) {
+  //console.log(props);
+  return (
+    <details
+      className="Collapsible CollapsibleOne"
+      key={props.titre + i}
+      open={true}
+    >
+      <summary className="Collapsible__trigger">{props.titre}</summary>
+      <div className="Collapsible__contentOuter">
+        <div className="Collapsible__contentInner">
+          {props.sousArticle.map((R, i) => checkInnerCollapses3(R,props2, i))}
+        </div>
+      </div>
+    </details>
+  );
+}
+
 //Check inner collapses profile
 export function checkInnerCollapses(props, i) {
   //Questions compatible with every profile & different from "0" (hidden Questions)
@@ -170,6 +188,33 @@ export function checkInnerCollapses(props, i) {
   } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
     //Questions compatible with this profile & different from "0" (hidden Questions)
     return DisplayCollapse2(props, i);
+  }
+}
+
+//Check inner collapses profile
+export function checkInnerCollapses3(props,props2, i) {
+  ///Check Page matching
+  //let myFaqProfile = CheckProfileFaq(data.data2);
+
+  if (IsntEmpty(props.FaqParents)) {
+    //If FAQ parents cat match current FAQ Cat
+    if (props.FaqParents.includes(props2.id)) {
+      //Questions compatible with every profile & different from "0" (hidden Questions)
+      if (props.profil != "0" && IsEmpty(props.profil)) {
+        return DisplayCollapse2(props, i);
+      } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
+        //Questions compatible with this profile & different from "0" (hidden Questions)
+        return DisplayCollapse2(props, i);
+      }
+    }
+  } else {
+    //Questions compatible with every profile & different from "0" (hidden Questions)
+    if (props.profil != "0" && IsEmpty(props.profil)) {
+      return DisplayCollapse2(props, i);
+    } else if (props.profil != "0" && props.profil.includes(CheckProfile())) {
+      //Questions compatible with this profile & different from "0" (hidden Questions)
+      return DisplayCollapse2(props, i);
+    }
   }
 }
 
