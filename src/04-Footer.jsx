@@ -9,7 +9,17 @@ export default function Footer(props) {
   //Check Services statuses
   function checkStatuses(props, i) {
     return (
-      <div className="innerOuter">
+      <div
+        className="innerOuter"
+        data-tooltip-id="serviceReview"
+        data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
+                        numériques de Unîmes. Grâce aux pastilles de
+                        couleur, vous pourrez connaître le nombre de service disponibles
+                        (vert), partiellement perturbés (orange) ou encore complètement
+                        indisponibles (rouge)."
+        /*data-tooltip-place="top"*/
+        data-tooltip-place="left-end"
+      >
         <p className="numStateTitle">État des services</p>
 
         {(() => {
@@ -57,15 +67,26 @@ export default function Footer(props) {
   return (
     <footer
       id="footer"
-      data-tooltip-id="serviceReview"
+      /*data-tooltip-id="serviceReview"
       data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
                         numériques de Unîmes. Grâce aux pastilles de
                         couleur, vous pourrez connaître le nombre de service disponibles
                         (vert), partiellement perturbés (orange) ou encore complètement
                         indisponibles (rouge)."
-      data-tooltip-place="top"
+      data-tooltip-place="top"*/
     >
       {/*Check Statuses*/}
+    <div className="iWrapper">
+    
+        <p className="numStateTitle">ChatBot</p>
+
+      <iframe
+        src="https://wiki-test.unimes.fr/catnum/"
+        width=""
+        height=""
+      ></iframe>
+    </div>
+
       {checkStatuses(props.data)}
       <Tooltip id="serviceReview" classNameArrow="myArrow" />
     </footer>
