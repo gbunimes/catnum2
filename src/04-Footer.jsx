@@ -77,9 +77,9 @@ export default function Footer(props) {
     >
       {/*Check Statuses*/}
       <div className="iWrapper">
-        <p className="numStateTitle">Assistant Virtuel</p>
+        {/*<p className="numStateTitle">Assistant Virtuel</p>*/}
         {/*-<p className="numStateTitle">🤖</p>*/}
-        {/*<p className="numStateTitle">?</p>*/}
+        <p className="numStateTitle">?</p>
 
         <iframe
           src="https://wiki-test.unimes.fr/catnum/"

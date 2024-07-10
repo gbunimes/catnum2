@@ -106,22 +106,26 @@ footer #serviceReview {
 }
 
 footer .iWrapper {
-  width: 100%;
+  /*width: 100%;*/
   margin-bottom: 15px;
   background-color: var(--uOrange);
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 3px;
+  /*border-radius: 3px;*/
+border-radius: 50%;
+
   cursor: pointer;
-  padding: 10px 5px;
+  /*padding: 10px 5px;*/
+  padding: 5px 18px;
+
   /*transition: 0.8s;*/
-  max-height:300px;
+  max-height: 300px;
 
   height: fit-content;
 }
-footer .iWrapper:hover  iframe {
+footer .iWrapper:hover iframe {
   display: flex;
 }
 footer .iWrapper:hover .numStateTitle {
@@ -132,10 +136,8 @@ footer .iWrapper:hover {
   padding: 0;
 
   background-color: white;
-  margin:0;
-
+  margin: 0;
 }
-
 
 footer .iWrapper .numStateTitle {
   color: white !important;
@@ -143,22 +145,23 @@ footer .iWrapper .numStateTitle {
   margin: 0 auto;
   padding: 0;
   text-transform: uppercase;
-  font-size: 15px !important;
+  /*font-size: 15px !important;*/
+  font-size: 30px !important;
 }
 footer .iWrapper iframe {
-      border: none;
+  border: none;
   display: flex;
   transition: 0.5s;
   transition: 0.8s;
 
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   /*width: 100%;*/
   /*height: auto;*/
-  min-height:300px;
-  margin: 0!important;
-  padding: 0!important;
+  min-height: 300px;
+  margin: 0 !important;
+  padding: 0 !important;
   display: none;
   -webkit-animation: scale-in-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
