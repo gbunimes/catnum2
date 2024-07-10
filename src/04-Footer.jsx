@@ -9,24 +9,22 @@ export default function Footer(props) {
   //Check Services statuses
   function checkStatuses(props, i) {
     return (
-      <div
-        className="innerOuter"
-        data-tooltip-id="serviceReview"
-        data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
-                        numériques de Unîmes. Grâce aux pastilles de
-                        couleur, vous pourrez connaître le nombre de service disponibles
-                        (vert), partiellement perturbés (orange) ou encore complètement
-                        indisponibles (rouge)."
-        /*data-tooltip-place="top"*/
-        data-tooltip-place="left-end"
-      >
+      <div className="innerOuter">
         <p className="numStateTitle">État des services</p>
 
         {(() => {
           //If nothing is wrong
           if (IsEmpty(props.instable) && IsEmpty(props.ko)) {
             return (
-              <div>
+              <div
+                data-tooltip-id="serviceReview"
+                data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
+                        numériques de Unîmes. Grâce aux pastilles de
+                        couleur, vous pourrez connaître le nombre de service disponibles
+                        (vert), partiellement perturbés (orange) ou encore complètement
+                        indisponibles (rouge)."
+                data-tooltip-place="top"
+              >
                 <a
                   href="https://www-apps.unimes.fr/etat-des-services/"
                   target="_blank"
@@ -40,7 +38,14 @@ export default function Footer(props) {
           //If a service is down or troubled
           else {
             return (
-              <div>
+              <div
+                data-tooltip-id="serviceReview"
+        data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
+                        numériques de Unîmes. Grâce aux pastilles de
+                        couleur, vous pourrez connaître le nombre de service disponibles
+                        (vert), partiellement perturbés (orange) ou encore complètement
+                        indisponibles (rouge)."
+        data-tooltip-place="top">
                 <a
                   href="https://www-apps.unimes.fr/etat-des-services/"
                   target="_blank"
@@ -63,29 +68,25 @@ export default function Footer(props) {
     );
   }
 
+  
+
   /*DOM*/
   return (
     <footer
       id="footer"
-      /*data-tooltip-id="serviceReview"
-      data-tooltip-content="Permet de connaître à tout moment la disponibilité des services
-                        numériques de Unîmes. Grâce aux pastilles de
-                        couleur, vous pourrez connaître le nombre de service disponibles
-                        (vert), partiellement perturbés (orange) ou encore complètement
-                        indisponibles (rouge)."
-      data-tooltip-place="top"*/
     >
       {/*Check Statuses*/}
-    <div className="iWrapper">
-    
-        <p className="numStateTitle">ChatBot</p>
+      <div className="iWrapper">
+        <p className="numStateTitle">Assistant Virtuel</p>
+        {/*-<p className="numStateTitle">🤖</p>*/}
+        {/*<p className="numStateTitle">?</p>*/}
 
-      <iframe
-        src="https://wiki-test.unimes.fr/catnum/"
-        width=""
-        height=""
-      ></iframe>
-    </div>
+        <iframe
+          src="https://wiki-test.unimes.fr/catnum/"
+          width=""
+          height=""
+        ></iframe>
+      </div>
 
       {checkStatuses(props.data)}
       <Tooltip id="serviceReview" classNameArrow="myArrow" />
