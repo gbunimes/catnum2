@@ -82,7 +82,7 @@ export default function Footer(props) {
         <p className="numStateTitle">?</p>
 
         <iframe
-          src="https://wiki-test.unimes.fr/catnum/"
+          src="https://services-numeriques.unimes.fr/catnum/"
           width=""
           height=""
         ></iframe>
